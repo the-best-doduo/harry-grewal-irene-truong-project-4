@@ -1,7 +1,6 @@
 // app holds everything
 pokemonApp = {};
-// shows array data for 6 random pokemon - needs to be before AJAX call to store
-const arrayOfChoices = [];
+// shows array data for 6 random pokemon - needs to be before 
 
 // AJAX call
 function getPokemon(number) {
@@ -10,27 +9,6 @@ function getPokemon(number) {
         dataType: 'json',
         method: 'GET'
     })
-    // .then(function (results) {
-    //     console.log(results);
-    //     // console.log(results.name);
-    //     // console.log(results.sprites);
-
-    //     // to show sprite
-    //     let sprite = results.sprites.front_default;
-
-    //     // getting all results for the 6 randomized pokemon and pushing into arrayOfChoices
-    //     arrayOfChoices.push(results);
-        
-    //     // to reference the first card div in our HTML
-    //     let card = 1;
-
-    //      // this grabs the first 6 pokemon. varaible count references the position in the array so name/sprite index matches
-    //     for (let count = 0; count <= 6; count++) {
-    //         $(`.card-${card}`).html(`<div>${arrayOfChoices[count].name}<img src = "${arrayOfChoices[count].sprites.front_default}"></div>`);
-    //         card++;
-    //     }
-
-    // })
 }
 
 // 6 pokemon to be displayed grabs from the API. calling the function getPokemon the same time we are pushing it --> try to randomize later - pokeParty is an array of promises - wait for the data to come back
@@ -47,8 +25,15 @@ $.when(...pokeParty)
     // .then((...)) is a parameter that passes a callback function
     .then((...pokeChoices) => {
         // go through pokeChoices and grab the first item[0] of each of the objects
-        arrayOfChoices = pokeChoices.map(pokemon => pokemon[0]);
-        console.log(arrayOfChoices)
+        const arrayOfChoices = pokeChoices.map(pokemon => pokemon[0]);
+        console.log(arrayOfChoices);
+        let card = 1;
+
+        for (let count = 0; count <= 6; count++) {
+            $(`.card-${card}`).html(`<div>${arrayOfChoices[count].name}<img src = "${arrayOfChoices[count].sprites.front_default}"></div>`);
+            card++;
+        }
+
 
         // for each array, create a variable to allow to pop up in the DOM
         arrayOfChoices.forEach(pokemonData => console.log(pokemonData.name));
@@ -62,9 +47,7 @@ $.when(...pokeParty)
     // array for each of the index specified above. .when listens to multiple promises and then tells you when the 
 
 
-        // for each array, create a variable to allow to pop up in the DOM
-        arrayOfChoices.forEach(pokemonData => console.log(pokemonData.name));
-    });
+
 
 
 // stores user input into variable once they click submit
