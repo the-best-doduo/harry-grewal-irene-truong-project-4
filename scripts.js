@@ -1,5 +1,6 @@
 // app holds everything
 pokemonApp = {};
+const arrayOfChoices = [];
 
 // AJAX call
 function getPokemon(number) {
@@ -7,15 +8,30 @@ function getPokemon(number) {
         url: `https://pokeapi.co/api/v2/pokemon/${number}/`,
         dataType: 'json',
         method: 'GET'
+    }).then(function (results) {
+        // console.log(results);
+        // console.log(results.name);
+        // console.log(results.sprites);
+        console.log(results.sprites.front_default);
+        let sprite = results.sprites.front_default;
+        arrayOfChoices.push(results);
+        console.log(pokeParty);
+        let card = 1;
+
+        for (let count = 0; count <= 6; count++) {
+            $(`.card-${card}`).html(`<div>${arrayOfChoices[count].name}<img src = "${arrayOfChoices[count].sprites.front_default}"></div>`);
+            card++;
+        }
+
     })
     // this works to append
-                // .then(function(results){
-                //     let sprite = results.sprites.front_default;
-                //     $(`.game-content`).append(`<div>
-                //         <h4>${results.name}</h4>
-                //         <img src="${sprite}">
-                //         </div>`)
-                // })
+    //             .then(function(results){
+    //                 let sprite = results.sprites.front_default;
+    //                 $(`.game-content`).append(`<div>
+    //                     <h4>${results.name}</h4>
+    //                     <img src="${sprite}">
+    //                     </div>`)
+    //             })
 }
 
 // 6 pokemon to be displayed --> try to randomize later
@@ -28,11 +44,10 @@ for (let i = 1; i <= 6; i++) {
 // array for each of the index specified above
 $.when(...pokeParty)
     .then((...pokeChoices) => {
-        const arrayOfChoices = pokeChoices.map(pokemon => pokemon[0])
+        arrayOfChoices = pokeChoices.map(pokemon => pokemon[0])
         console.log(arrayOfChoices)
 
         arrayOfChoices.forEach(pokemonName => console.log(pokemonName.name));
-        
         //still needs work - try to get sprite
         // arrayOfChoices.forEach(pokemonSprite => console.log(pokemonName.name));
         // })
@@ -89,13 +104,3 @@ $(`.reset`).click(function () {
 $(function () {
 
 });
-
-
-
-// TO DO FUNCTIONS
-// get sprite and name and place on each card 
-// randomize character on card
-// get user input to show when if === character name, show correct
-// PASS to reveal card and show pokemon
-
-// error handling for when pressing submit without an answer
