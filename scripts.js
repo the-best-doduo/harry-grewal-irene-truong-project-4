@@ -9,13 +9,13 @@ function getPokemon(number) {
         method: 'GET'
     })
     // this works to append
-    //             .then(function(results){
-    //                 let sprite = results.sprites.front_default;
-    //                 $(`.game-content`).append(`<div>
-    //                     <h4>${results.name}</h4>
-    //                     <img src="${sprite}">
-    //                     </div>`)
-    //             })
+                // .then(function(results){
+                //     let sprite = results.sprites.front_default;
+                //     $(`.game-content`).append(`<div>
+                //         <h4>${results.name}</h4>
+                //         <img src="${sprite}">
+                //         </div>`)
+                // })
 }
 
 // 6 pokemon to be displayed --> try to randomize later
@@ -32,6 +32,7 @@ $.when(...pokeParty)
         console.log(arrayOfChoices)
 
         arrayOfChoices.forEach(pokemonName => console.log(pokemonName.name));
+        
         //still needs work - try to get sprite
         // arrayOfChoices.forEach(pokemonSprite => console.log(pokemonName.name));
         // })
@@ -89,3 +90,12 @@ $(function () {
 
 });
 
+
+
+// TO DO FUNCTIONS
+// get sprite and name and place on each card 
+// randomize character on card
+// get user input to show when if === character name, show correct
+// PASS to reveal card and show pokemon
+
+// error handling for when pressing submit without an answer
