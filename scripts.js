@@ -13,11 +13,21 @@ function getPokemon(number) {
 
 // 6 pokemon to be displayed grabs from the API. calling the function getPokemon the same time we are pushing it --> try to randomize later - pokeParty is an array of promises - wait for the data to come back
 const pokeParty = [];
+// randomPartyArray is the array which will contain the objects for 6 random pokemon
+const randomPartyArray = [];
 console.log(pokeParty);
-for (let i = 1; i <= 6; i++) {
+for (let i = 1; i <= 150; i++) {
     pokeParty.push(getPokemon(i)
     );
 }
+// generate 6 random numbers from 1-150
+for (let rando = 1; rando <=6; rando++) {
+    const randomParty = Math.floor((Math.random() * pokeParty.length));
+    randomPartyArray.push(randomParty);
+}
+
+
+console.log(randomPartyArray);
 
 // array for each of the index specified above
 // ... same as pokeParty[0], pokeParty[1] etc until 6
@@ -27,20 +37,16 @@ $.when(...pokeParty)
         // go through pokeChoices and grab the first item[0] of each of the objects
         const arrayOfChoices = pokeChoices.map(pokemon => pokemon[0]);
         console.log(arrayOfChoices);
+        // Associated random number with the object in arrayOfChoices
+        console.log(arrayOfChoices[randomParty].name);
+
         let card = 1;
 
         for (let count = 0; count <= 6; count++) {
             $(`.card-${card}`).html(`<div>${arrayOfChoices[count].name}<img src = "${arrayOfChoices[count].sprites.front_default}"></div>`);
             card++;
         }
-
-
-        // for each array, create a variable to allow to pop up in the DOM
-        arrayOfChoices.forEach(pokemonData => console.log(pokemonData.name));
     });
-        //still needs work - try to get sprite
-        // arrayOfChoices.forEach(pokemonSprite => console.log(pokemonName.name));
-        // })
 
         // TO GET 150 and randomize: make a call for 150 and have a giant array of info, then create a function to randomize and grab 6
 
