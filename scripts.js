@@ -62,6 +62,9 @@ $.when(...pokeParty)
     // array for each of the index specified above. .when listens to multiple promises and then tells you when the 
 
 
+        // for each array, create a variable to allow to pop up in the DOM
+        arrayOfChoices.forEach(pokemonData => console.log(pokemonData.name));
+    });
 
 
 // stores user input into variable once they click submit
@@ -88,6 +91,7 @@ $(`form`).on(`submit`, function (e) {
 
 })
 
+// check if user input matches pokemonName.name
 
 
 
