@@ -1,1 +1,13 @@
+// variables and mixins
+
+
+// setup
 @import "partials/setup";
+
+// common styles
+@import "partials/global";
+
+// sections
+@import "partials/instructions";
+@import "partials/game";
+@import "partials/results"
