@@ -28,6 +28,7 @@ for (let rando = 1; rando <=6; rando++) {
 
 
 console.log(randomPartyArray);
+// randomPartyArray.length = 6
 
 // array for each of the index specified above
 // ... same as pokeParty[0], pokeParty[1] etc until 6
@@ -38,7 +39,10 @@ $.when(...pokeParty)
         const arrayOfChoices = pokeChoices.map(pokemon => pokemon[0]);
         console.log(arrayOfChoices);
         // Associated random number with the object in arrayOfChoices
-        console.log(arrayOfChoices[randomParty].name);
+        for (let n = 0; n <= randomPartyArray.length; n++) {
+            console.log(arrayOfChoices[randomPartyArray[n]].name);
+        }
+
 
         let card = 1;
 
