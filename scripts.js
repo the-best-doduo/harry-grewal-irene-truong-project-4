@@ -21,8 +21,10 @@ for (let i = 1; i <= 150; i++) {
     );
 }
 // generate 6 random numbers from 1-150
+// ERROR HANDLING - THE SAME NUMBER CAN BE GENERATED MORE THAN ONCE
+
 for (let rando = 1; rando <=6; rando++) {
-    const randomParty = Math.floor((Math.random() * pokeParty.length));
+    const randomParty = Math.floor((Math.random() * pokeParty.length) + 1);
     randomPartyArray.push(randomParty);
 }
 
