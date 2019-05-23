@@ -1,5 +1,6 @@
 // app holds everything
 pokemonApp = {};
+// shows array data for 6 random pokemon - needs to be before AJAX call to store
 const arrayOfChoices = [];
 
 // AJAX call
@@ -8,64 +9,62 @@ function getPokemon(number) {
         url: `https://pokeapi.co/api/v2/pokemon/${number}/`,
         dataType: 'json',
         method: 'GET'
-    }).then(function (results) {
-        // console.log(results);
-        // console.log(results.name);
-        // console.log(results.sprites);
-        console.log(results.sprites.front_default);
-        let sprite = results.sprites.front_default;
-        arrayOfChoices.push(results);
-        console.log(pokeParty);
-        let card = 1;
-
-        for (let count = 0; count <= 6; count++) {
-            $(`.card-${card}`).html(`<div>${arrayOfChoices[count].name}<img src = "${arrayOfChoices[count].sprites.front_default}"></div>`);
-            card++;
-        }
-
     })
-    // this works to append
-    //             .then(function(results){
-    //                 let sprite = results.sprites.front_default;
-    //                 $(`.game-content`).append(`<div>
-    //                     <h4>${results.name}</h4>
-    //                     <img src="${sprite}">
-    //                     </div>`)
-    //             })
+    // .then(function (results) {
+    //     console.log(results);
+    //     // console.log(results.name);
+    //     // console.log(results.sprites);
+
+    //     // to show sprite
+    //     let sprite = results.sprites.front_default;
+
+    //     // getting all results for the 6 randomized pokemon and pushing into arrayOfChoices
+    //     arrayOfChoices.push(results);
+        
+    //     // to reference the first card div in our HTML
+    //     let card = 1;
+
+    //      // this grabs the first 6 pokemon. varaible count references the position in the array so name/sprite index matches
+    //     for (let count = 0; count <= 6; count++) {
+    //         $(`.card-${card}`).html(`<div>${arrayOfChoices[count].name}<img src = "${arrayOfChoices[count].sprites.front_default}"></div>`);
+    //         card++;
+    //     }
+
+    // })
 }
 
-// 6 pokemon to be displayed --> try to randomize later
+// 6 pokemon to be displayed grabs from the API. calling the function getPokemon the same time we are pushing it --> try to randomize later - pokeParty is an array of promises - wait for the data to come back
 const pokeParty = [];
+console.log(pokeParty);
 for (let i = 1; i <= 6; i++) {
     pokeParty.push(getPokemon(i)
     );
 }
 
 // array for each of the index specified above
+// ... same as pokeParty[0], pokeParty[1] etc until 6
 $.when(...pokeParty)
+    // .then((...)) is a parameter that passes a callback function
     .then((...pokeChoices) => {
-        arrayOfChoices = pokeChoices.map(pokemon => pokemon[0])
+        // go through pokeChoices and grab the first item[0] of each of the objects
+        arrayOfChoices = pokeChoices.map(pokemon => pokemon[0]);
         console.log(arrayOfChoices)
 
-        arrayOfChoices.forEach(pokemonName => console.log(pokemonName.name));
+        // for each array, create a variable to allow to pop up in the DOM
+        arrayOfChoices.forEach(pokemonData => console.log(pokemonData.name));
+    });
         //still needs work - try to get sprite
         // arrayOfChoices.forEach(pokemonSprite => console.log(pokemonName.name));
         // })
 
-    });
+        // TO GET 150 and randomize: make a call for 150 and have a giant array of info, then create a function to randomize and grab 6
 
-
-// stores user info into a variable
-// prevent default of submit button
-// when click submit under same form, stores as variable
-
-// const userInput1 = document.getElementById('guess-1').value;
-
-// console.log(userInput1);
+    // array for each of the index specified above. .when listens to multiple promises and then tells you when the 
 
 
 
-// check if user input matches pokemonName.name
+
+// stores user input into variable once they click submit
 $(`form`).on(`submit`, function (e) {
     e.preventDefault();
     // try to run this in a for loop
