@@ -39,17 +39,19 @@ $.when(...pokeParty)
         const arrayOfChoices = pokeChoices.map(pokemon => pokemon[0]);
         console.log(arrayOfChoices);
         // Associated random number with the object in arrayOfChoices
+        let card = 1;
         for (let n = 0; n <= randomPartyArray.length; n++) {
             console.log(arrayOfChoices[randomPartyArray[n]].name);
-        }
-
-
-        let card = 1;
-
-        for (let count = 0; count <= 6; count++) {
-            $(`.card-${card}`).html(`<div>${arrayOfChoices[count].name}<img src = "${arrayOfChoices[count].sprites.front_default}"></div>`);
+        $(`.card-${card}`).html(`<div>${arrayOfChoices[randomPartyArray[n]].name}<img src = "${arrayOfChoices[randomPartyArray[n]].sprites.front_default}"></div>`);
             card++;
         }
+
+
+        
+
+        // for (let count = 0; count <= 6; count++) {
+
+        // }
     });
 
         // TO GET 150 and randomize: make a call for 150 and have a giant array of info, then create a function to randomize and grab 6
