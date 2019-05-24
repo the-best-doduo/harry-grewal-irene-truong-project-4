@@ -1,5 +1,6 @@
 // app holds everything
 pokemonApp = {};
+// const globalArray = [];
 // shows array data for 6 random pokemon - needs to be before 
 
 // AJAX call
@@ -39,16 +40,71 @@ $.when(...pokeParty)
     .then((...pokeChoices) => {
         // go through pokeChoices and grab the first item[0] of each of the objects
         const arrayOfChoices = pokeChoices.map(pokemon => pokemon[0]);
+        // let globalArray = arrayOfChoices;
         console.log(arrayOfChoices);
+        // console.log(globalArray);
         // Associated random number with the object in arrayOfChoices
         let card = 1;
         for (let n = 0; n <= randomPartyArray.length; n++) {
             console.log(arrayOfChoices[randomPartyArray[n]].name);
+            // this yields card-1 to get position of each card bc before, defined let card= a number so ${card} now yields a number
             $(`.card-${card}`).html(`<div>
             <img src = "${arrayOfChoices[randomPartyArray[n]].sprites.front_default}" alt="Pokemon card.">
             <p>${arrayOfChoices[randomPartyArray[n]].name}</p>
             </div>`);
             card++;
+// aware of n so can go through each pokemon and check if matches any of the,
+            $(`form`).on(`submit`, function (e) {
+                e.preventDefault();
+                // try to run this in a for loop with same logic as abv by let userInput=1
+
+                let userInput = 1;
+                    for (let inputNumber = 0; inputNumber < 6; inputNumber++) {
+                        // need to define 6 userGuess's - how do we store them all in seperate 6 varaibles so we can if/else them later?
+                        let userGuess = document.getElementById(`guess-${userInput}`).value;
+                        console.log(userGuess);
+                        userInput ++;
+
+                        // Checks to see if the userGuess matches the name of the pokemon, then clears userGuess for the next check
+                        // Not working because we use vanilla javascript to get userGuess, but .empty is a jquery function
+                        // Possibly take this out ?
+                        if (userGuess === `${arrayOfChoices[randomPartyArray[n]].name}`) {
+                            console.log("correct");
+                        }
+                        userGuess.empty();
+                    }
+
+                // if (userGuess === `${arrayOfChoices[randomPartyArray[n]].name}`) {
+                //     console.log("correct!")
+                // } else {
+                //     console.log("wrong!")
+                // }
+
+                // const userInput1 = document.getElementById('guess-1').value;
+                // console.log(userInput1);
+
+                // if (userInput1 === `${arrayOfChoices[randomPartyArray[n]].name}`) {
+                //     console.log("correct!")
+                // } else {
+                //     console.log("wrong!")
+                // }
+
+                const userInput2 = document.getElementById('guess-2').value;
+                console.log(userInput2);
+
+                const userInput3 = document.getElementById('guess-3').value;
+                console.log(userInput3);
+
+                const userInput4 = document.getElementById('guess-4').value;
+                console.log(userInput4);
+
+                const userInput5 = document.getElementById('guess-5').value;
+                console.log(userInput5);
+
+                const userInput6 = document.getElementById('guess-6').value;
+                console.log(userInput6);
+
+            })
         }
 
 
@@ -68,34 +124,7 @@ $.when(...pokeParty)
 
 
 // stores user input into variable once they click submit
-$(`form`).on(`submit`, function (e) {
-    e.preventDefault();
-    // try to run this in a for loop
-    const userInput1 = document.getElementById('guess-1').value;
-    console.log(userInput1);
 
-    // if (userInput1 === `${arrayOfChoices[randomPartyArray[n]].name}`) {
-    //     console.log("correct!")
-    // } else {
-    //     console.log("wrong!")
-    // }
-
-    const userInput2 = document.getElementById('guess-2').value;
-    console.log(userInput2);
-
-    const userInput3 = document.getElementById('guess-3').value;
-    console.log(userInput3);
-
-    const userInput4 = document.getElementById('guess-4').value;
-    console.log(userInput4);
-
-    const userInput5 = document.getElementById('guess-5').value;
-    console.log(userInput5);
-
-    const userInput6 = document.getElementById('guess-6').value;
-    console.log(userInput6);
-
-})
 
 // FUNCTION: check if user input matches pokemonName.name
 
@@ -120,3 +149,5 @@ $(`.reset`).click(function () {
 $(function () {
 
 });
+
+// ERROR HANDLING - SOMETIMES NOT ALL POKEMON LOAD ONTO SCREEN
