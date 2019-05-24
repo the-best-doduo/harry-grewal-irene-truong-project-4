@@ -6,6 +6,16 @@
         flex: 1 0 30%;
         margin:10px;
         background: purple;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.card {
+    img {
+        width: 150px;
     }
 }
 
@@ -22,6 +32,19 @@
     }
 }
 
+.fieldset {
+    text-align: center;
+}
 .card-reveal {
     display:block;
+}
+
+input[type=submit],
+button.pass,
+.submit {
+    padding: 5px;
+}
+
+.button-container {
+    text-align: center;
 }
