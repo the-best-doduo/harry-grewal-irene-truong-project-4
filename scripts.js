@@ -11,7 +11,7 @@ function getPokemon(number) {
     })
 }
 
-// 6 pokemon to be displayed grabs from the API. calling the function getPokemon the same time we are pushing it --> try to randomize later - pokeParty is an array of promises - wait for the data to come back
+// 6 pokemon to be displayed grabs from the API. calling the function getPokemon the same time we are pushing it --> pokeParty is an array of promises - wait for the data to come back
 const pokeParty = [];
 // randomPartyArray is the array which will contain the objects for 6 random pokemon
 const randomPartyArray = [];
@@ -44,7 +44,10 @@ $.when(...pokeParty)
         let card = 1;
         for (let n = 0; n <= randomPartyArray.length; n++) {
             console.log(arrayOfChoices[randomPartyArray[n]].name);
-        $(`.card-${card}`).html(`<div>${arrayOfChoices[randomPartyArray[n]].name}<img src = "${arrayOfChoices[randomPartyArray[n]].sprites.front_default}"></div>`);
+            $(`.card-${card}`).html(`<div>
+            <img src = "${arrayOfChoices[randomPartyArray[n]].sprites.front_default}" alt="Pokemon card.">
+            <p>${arrayOfChoices[randomPartyArray[n]].name}</p>
+            </div>`);
             card++;
         }
 
@@ -71,6 +74,12 @@ $(`form`).on(`submit`, function (e) {
     const userInput1 = document.getElementById('guess-1').value;
     console.log(userInput1);
 
+    // if (userInput1 === `${arrayOfChoices[randomPartyArray[n]].name}`) {
+    //     console.log("correct!")
+    // } else {
+    //     console.log("wrong!")
+    // }
+
     const userInput2 = document.getElementById('guess-2').value;
     console.log(userInput2);
 
@@ -88,17 +97,24 @@ $(`form`).on(`submit`, function (e) {
 
 })
 
-// check if user input matches pokemonName.name
+// FUNCTION: check if user input matches pokemonName.name
 
 
 
+// FUNCTION: when pass, reveal pokemon name
+$(`.pass`).on(`click`, function (e) {
+    e.preventDefault();
+    console.log("pressed");
+    // $(`.card-1 p`).addClass(`card-reveal`);
+    // this targets all paragraphs - need to show one at a time if user presses PASS - maybe use addClass of .card-reveal in game.scss
+    $(`p`).show(`slow`);
+});
 
 
 // reset button empties .results and removes choices
 $(`.reset`).click(function () {
     $(`.results`).empty();
     $(`form`).trigger(`reset`);
-    // $(`label`).removeClass('check');
 });
 // document ready
 $(function () {

@@ -144,3 +144,76 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   clip-path: inset(100%);
   clip: rect(0 0 0);
   overflow: hidden; }
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 1 solid red; }
+
+.skip-link {
+  position: absolute;
+  left: -1000px;
+  top: 5px;
+  z-index: 999;
+  background: black;
+  color: white; }
+  .skip-link:focus {
+    left: 0; }
+
+html {
+  font-size: 125%;
+  line-height: 1.6; }
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px; }
+
+.instructions-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.game-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .game-content .card {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 30%;
+    flex: 1 0 30%;
+    margin: 10px;
+    background: purple; }
+
+.card-1,
+.card-2,
+.card-3,
+.card-4,
+.card-5,
+.card-6 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  .card-1 p,
+  .card-2 p,
+  .card-3 p,
+  .card-4 p,
+  .card-5 p,
+  .card-6 p {
+    display: none; }
+
+.card-reveal {
+  display: block; }
