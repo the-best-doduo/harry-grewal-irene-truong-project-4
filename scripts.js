@@ -48,6 +48,7 @@ $.when(...pokeParty)
             <img src = "${arrayOfChoices[randomPartyArray[n]].sprites.front_default}" alt="Pokemon card.">
             <p>${arrayOfChoices[randomPartyArray[n]].name}</p>
             </div>`);
+
             $(`.card-${card} + form .fieldset`).prepend(`<input type="hidden" value="${arrayOfChoices[randomPartyArray[n]].name}">`);
             // the above prepends input hidden of the value of the generated pokemon name
             card++;
@@ -83,18 +84,20 @@ $(`form`).on(`submit`, function (e) {
 $(`.pass`).on(`click`, function (e) {
     e.preventDefault();
     console.log("pressed");
-    // $(`.card-1 p`).addClass(`card-reveal`);
-    // this targets all paragraphs - need to show one at a time if user presses PASS - maybe use addClass of .card-reveal in game.scss
-    $(`p`).show(`slow`);
+// store as variable the target's attribute at position 1
+    const num = e.target.attributes[1].value
+// for each pass button click per card, change css style to display the p
+    $(`.card-${num} p`).css({"display": "block"})
+
+    // $(`.card-${num} p`).addClass(`card-reveal`)
 });
 
 
-// reset button empties .results and removes choices- NEED TO RELOAD PAGE 
+// reset button reloads page to new game
 $(`.reset`).click(function () {
-    $(`.results`).empty();
-    $(`form`).trigger(`reset`);
+    location.reload();
 });
 // document ready
 $(function () {
-
+   
 });
