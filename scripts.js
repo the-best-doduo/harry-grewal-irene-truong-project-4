@@ -52,33 +52,12 @@ $.when(...pokeParty)
             <img src = "${arrayOfChoices[randomPartyArray[n]].sprites.front_default}" alt="Pokemon card.">
             <p>${arrayOfChoices[randomPartyArray[n]].name}</p>
             </div>`);
+            $(`.card-${card} + form .fieldset`).prepend(`<input type="hidden" value="${arrayOfChoices[randomPartyArray[n]].name}">`);
             card++;
+        }
 // aware of n so can go through each pokemon and check if matches any of the,
-            $(`form`).on(`submit`, function (e) {
-                e.preventDefault();
-                const that = $(this).find('input')
-                
-                // try to run this in a for loop with same logic as abv by let userInput=1
-
-                let userInput = 1;
-                    // for (let inputNumber = 0; inputNumber < 6; inputNumber++) {
-                        // need to define 6 userGuess's - how do we store them all in seperate 6 varaibles so we can if/else them later?
-                        let userGuess = $(`#guess-${userInput}`).val();
-                        console.log(userGuess);
-                        
-
-                        // Checks to see if the userGuess matches the name of the pokemon, then clears userGuess for the next check
-                        // Not working because we use vanilla javascript to get userGuess, but .empty is a jquery function
-                        // Possibly take this out ?
-                        if (userGuess === `${arrayOfChoices[randomPartyArray[n]].name}`) {
-                            console.log("correct");
-                        } else {
-                            console.log("incorrect");
-                        }
-                        userInput ++;
-
-                        that.val('');
-                    // }
+        
+        
 
                 // if (userGuess === `${arrayOfChoices[randomPartyArray[n]].name}`) {
                 //     console.log("correct!")
@@ -88,12 +67,6 @@ $.when(...pokeParty)
 
                 // const userInput1 = document.getElementById('guess-1').value;
                 // console.log(userInput1);
-
-                // if (userInput1 === `${arrayOfChoices[randomPartyArray[n]].name}`) {
-                //     console.log("correct!")
-                // } else {
-                //     console.log("wrong!")
-                // }
 
                 // const userInput2 = document.getElementById('guess-2').value;
                 // console.log(userInput2);
@@ -109,10 +82,6 @@ $.when(...pokeParty)
 
                 // const userInput6 = document.getElementById('guess-6').value;
                 // console.log(userInput6);
-
-            })
-        }
-
 
         
 
@@ -156,4 +125,42 @@ $(function () {
 
 });
 
+// $(`#form-1`).on('submit', function(e) {
+//     e.preventDefault();
+//     console.log("safi");
+// })
+
+$(`form`).on(`submit`, function (e) {
+            
+            e.preventDefault();
+            console.log("harry");
+            // const that = $(this).find('input');
+            
+            // try to run this in a for loop with same logic as abv by let userInput=1
+
+            let userInput = 1;
+                // for (let inputNumber = 0; inputNumber < 6; inputNumber++) {
+                    // need to define 6 userGuess's - how do we store them all in seperate 6 varaibles so we can if/else them later?
+                    let userGuess = $(this).find('input[type="text"]').val();
+                    let correctAnswer = $(this).find('input[type="hidden"]').val();
+                    console.log(userGuess);
+                    console.log(correctAnswer);
+                    if (userGuess === correctAnswer) {
+                        console.log("correct");
+                    } else {
+                        console.log("incorrect");
+                    }
+                    
+
+                    // Checks to see if the userGuess matches the name of the pokemon, then clears userGuess for the next check
+                    // Not working because we use vanilla javascript to get userGuess, but .empty is a jquery function
+                    // Possibly take this out ?
+
+                    // userInput ++;
+
+                    // that.val('');
+                // }
+
+
+        })
 // ERROR HANDLING - SOMETIMES NOT ALL POKEMON LOAD ONTO SCREEN
