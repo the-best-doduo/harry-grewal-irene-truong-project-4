@@ -147,8 +147,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 * {
   padding: 0;
-  margin: 0;
-  border: 1 solid red; }
+  margin: 0; }
 
 .skip-link {
   position: absolute;
@@ -162,11 +161,27 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 html {
   font-size: 125%;
-  line-height: 1.6; }
+  line-height: 1.6;
+  font-family: "Abel", sans-serif; }
 
 .wrapper {
   margin: 0 auto;
   max-width: 1200px; }
+
+header {
+  background: #dd1a17; }
+
+h1 {
+  font-size: 4rem;
+  color: #fdcb04;
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 2px 2px 5px #326299; }
+
+.instructions-area {
+  background: #fdcb04; }
 
 .instructions-content {
   display: -webkit-box;

@@ -1,0 +1,25 @@
+// variables
+$main: rgb(221,26,23);
+$secondary:rgb(236,50,40);
+
+// border
+$border: rgb(50,98,153);
+
+$accent: rgb(253,203,4);
+
+// text
+$text: 'Abel', sans-serif;
+$heading-font:'Roboto Slab', serif;
+
+
+// mixins
+@mixin heading ($font-size, $tt) {
+    font-size: $font-size;
+    color: $accent;
+    font-family: $heading-font;
+    text-transform: $tt;
+    line-height: 1.2;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgb(50,98,153);
+}
+
