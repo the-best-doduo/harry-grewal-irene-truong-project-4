@@ -78,11 +78,11 @@ $(`form`).on(`submit`, function (e) {
     // checks if userGuess is correct or not
     if (userGuess === correctAnswer) {
         console.log("correct");
-        $(this).prepend(`<p class = "statement">Correct!</p>`);
+        $(this).prepend(`<p class = "results-statement">Correct!</p>`);
         score = score + 1;
     } else {     
         console.log("incorrect");
-        $(this).prepend(`<p class='statement'>Incorrect! The correct answer is <span class ="correctAnswer">${correctAnswer}</span></p>`)
+        $(this).prepend(`<p class='result-statement'>Incorrect! The correct answer is <span class ="correct-answer">${correctAnswer}</span></p>`)
         
     }
     // After determining whether the user's input was correct or incorrect, the chosen card's input text field, submit button, and pass button are all disabled
