@@ -69,7 +69,8 @@ $(`form`).on(`submit`, function (e) {
     let userInput = 1;
 
     // stores in variable value that the user passes in input text from html, and also stores in variable the input hidden (pokemon name) that was dynamically added to the DOM
-    let userGuess = $(this).find('input[type="text"]').val();
+    // The value the user inputted is automatically converted to lower case to prevent capitalization errors
+    let userGuess = $(this).find('input[type="text"]').val().toLowerCase();
     let correctAnswer = $(this).find('input[type="hidden"]').val();
     console.log(userGuess);
     console.log(correctAnswer);
