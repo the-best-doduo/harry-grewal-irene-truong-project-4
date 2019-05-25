@@ -173,13 +173,6 @@ img {
   margin: 0 auto;
   max-width: 1200px; }
 
-.instructions-area,
-.results-area {
-  background: #fdcb04; }
-
-header {
-  background: #dd1a17; }
-
 h1 {
   font-size: 4rem;
   color: #fdcb04;
@@ -211,6 +204,11 @@ h4 {
 p {
   font-size: 1.5rem; }
 
+body {
+  background: -webkit-radial-gradient(white, rgba(50, 98, 153, 0.9), #dd1a17);
+  background: -o-radial-gradient(white, rgba(50, 98, 153, 0.9), #dd1a17);
+  background: radial-gradient(white, rgba(50, 98, 153, 0.9), #dd1a17); }
+
 .instructions-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -219,9 +217,6 @@ p {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
-
-.game-area {
-  background-color: #ec3228; }
 
 .game-content {
   display: -webkit-box;
@@ -299,11 +294,13 @@ p {
   .card-6 p {
     display: none;
     padding: 5px;
-    text-align: center; }
+    text-align: center;
+    color: #fdcb04; }
 
 .answer-statement {
   text-align: center;
-  padding: 5px; }
+  padding: 5px;
+  color: #fdcb04; }
 
 .correct-answer {
   text-transform: uppercase;
@@ -353,11 +350,7 @@ button.pass,
 .results h3 {
   padding: 20px; }
 
-.reset-container {
-  background: #ec3228; }
-
 footer {
-  text-align: center;
-  background-color: #dd1a17; }
+  text-align: center; }
   footer h4 {
     color: #fdcb04; }

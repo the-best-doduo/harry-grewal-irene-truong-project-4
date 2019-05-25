@@ -1,5 +1,5 @@
 .game-area {
-    background-color: $secondary;
+    // background-color: $secondary;
 }
 
 .game-content {
@@ -50,12 +50,14 @@
         display:none;
         padding: 5px;
         text-align: center;
+        color: $accent;
     }
 }
 
 .answer-statement {
     text-align: center;
     padding:5px;
+    color: $accent;
 }
 
 .correct-answer {

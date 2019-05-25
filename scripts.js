@@ -3,6 +3,11 @@ pokemonApp = {};
 // const globalArray = [];
 // shows array data for 6 random pokemon - needs to be before 
 
+// DO NAMESPACING LATER
+// pokemonApp.init = function(){
+//     getPokemon();
+// }
+
 // AJAX call
 function getPokemon(number) {
     return $.ajax({
@@ -128,6 +133,9 @@ $(`.pass`).on(`click`, function (e) {
 // FUNCTION: final submit button shows score
 $(`.submit`).on(`click`, function(e){
     e.preventDefault();
+
+// FUNCTION IF NOT ALL FIELDS ARE FULL
+
     $(`.results`).html(`<div><h3>Your final score is ${score} out of 6!</h3></div>`)
 })
 
@@ -139,5 +147,6 @@ $(`.reset`).click(function () {
 });
 // document ready
 $(function () {
-   
+    // DO NAMESPACING LATER
+//    pokemonApp.init()
 });
