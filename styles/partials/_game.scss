@@ -5,11 +5,14 @@
     .card {
         flex: 1 0 30%;
         margin:10px;
-        background: purple;
+        // background: purple;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-image: url('../assets/wild-grass.png');
+        background-size: cover;
+        
     }
 }
 
