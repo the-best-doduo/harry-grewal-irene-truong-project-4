@@ -258,6 +258,10 @@ p {
 .card img {
   width: 250px; }
 
+.filter-on {
+  -webkit-filter: brightness(0);
+  filter: brightness(0); }
+
 .card-1,
 .card-2,
 .card-3,

@@ -50,7 +50,7 @@ $.when(...pokeParty)
             // console.log(arrayOfChoices[randomPartyArray[n]].name);
             // this yields card-1 to get position of each card bc before, defined let card= a number so ${card} now yields a number
             $(`.card-${card}`).html(`<div>
-            <img src = "${arrayOfChoices[randomPartyArray[n]].sprites.front_default}" alt="Pokemon card.">
+            <img src = "${arrayOfChoices[randomPartyArray[n]].sprites.front_default}" alt="Pokemon card." class="filter-on">
             <p><span class = "correct-answer">${arrayOfChoices[randomPartyArray[n]].name}</span> </p>
             </div>`);
 
@@ -89,10 +89,11 @@ $(`form`).on(`submit`, function (e) {
     $(this).find(`input[type="text"]`).prop("disabled", true);
     $(this).find(`input[type="submit"]`).prop("disabled", true).css({ "background": "white", "color":"black" });
     // the above adds css styling to submit when user clicks submit
-    // $(this).find(`button[class="pass"]`).prop("disabled", true);
 
 
     $(this).find(`button[class="pass"]`).prop("disabled", true).css({"background" : "blue", "color" : "white"});
+
+    $(this).parent().find(`img`).removeClass("filter-on");
 })
 
 
@@ -109,6 +110,7 @@ $(`.pass`).on(`click`, function (e) {
     $(this).parent().parent().find(`input[type="text"]`).prop("disabled", true);
     $(this).parent().find(`input[type="submit"]`).prop("disabled", true);
     $(this).prop("disabled", true);
+    $(this).parent().parent().parent().parent().find(`img`).removeClass("filter-on");
     
     
     
