@@ -1,3 +1,7 @@
+.game-area {
+    background-color: $secondary;
+}
+
 .game-content {
     display:flex;
     flex-direction: row;
@@ -5,13 +9,13 @@
     .card {
         flex: 1 0 30%;
         margin:10px;
-        // background: purple;
+        background: $border;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-image: url('../assets/wild-grass.png');
-        background-size: cover;
+        border: 5px solid $accent;
+        border-radius: 30px;
         
     }
 }
@@ -42,12 +46,32 @@
 //     display:block;
 // }
 
+
 input[type=submit],
 button.pass,
 .submit {
     padding: 5px;
+    border: 1px solid $accent;
+    border-radius: 40px;
+    margin: 5px 0;
+    background-color: $border;
+    color: $accent;
 }
 
 .button-container {
     text-align: center;
+}
+
+.statement {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.correctAnswer {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.final-submit {
+    background-color: $secondary;
 }

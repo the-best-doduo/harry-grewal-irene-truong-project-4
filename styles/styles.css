@@ -147,8 +147,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 * {
   padding: 0;
-  margin: 0;
-  border: 1px solid red; }
+  margin: 0; }
 
 .skip-link {
   position: absolute;
@@ -220,6 +219,9 @@ p {
   -ms-flex-direction: column;
   flex-direction: column; }
 
+.game-area {
+  background-color: #ec3228; }
+
 .game-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -235,6 +237,7 @@ p {
     -ms-flex: 1 0 30%;
     flex: 1 0 30%;
     margin: 10px;
+    background: rgba(50, 98, 153, 0.9);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -248,8 +251,8 @@ p {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background-image: url("../assets/wild-grass.png");
-    background-size: cover; }
+    border: 5px solid #fdcb04;
+    border-radius: 30px; }
 
 .card img {
   width: 150px; }
@@ -281,16 +284,35 @@ p {
 input[type=submit],
 button.pass,
 .submit {
-  padding: 5px; }
+  padding: 5px;
+  border: 1px solid #fdcb04;
+  border-radius: 40px;
+  margin: 5px 0;
+  background-color: rgba(50, 98, 153, 0.9);
+  color: #fdcb04; }
 
 .button-container {
   text-align: center; }
+
+.statement {
+  text-align: center;
+  font-size: 1.25rem; }
+
+.correctAnswer {
+  text-transform: uppercase;
+  text-align: center; }
+
+.final-submit {
+  background-color: #ec3228; }
+
+.bottom-button {
+  background-color: #ec3228; }
 
 button[type=reset] {
   padding: 5px; }
 
 footer {
   text-align: center;
-  background-color: #ec3228; }
+  background-color: #dd1a17; }
   footer h4 {
     color: #fdcb04; }

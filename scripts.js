@@ -77,13 +77,15 @@ $(`form`).on(`submit`, function (e) {
     // checks if userGuess is correct or not
     if (userGuess === correctAnswer) {
         console.log("correct");
-        $(this).prepend(`<p>Correct!</p>`);
+        $(this).prepend(`<p class = "statement">Correct!</p>`);
         score = score + 1;
     } else {     
         console.log("incorrect");
-        $(this).prepend(`<p>Incorrect! The correct answer is <span>${correctAnswer}</span></p>`)
+        $(this).prepend(`<p class='statement'>Incorrect! The correct answer is <span class ="correctAnswer">${correctAnswer}</span></p>`)
         
     }
+    // disables the first input after user clicks submit. Can't get it to work on each button using (this), atm
+    $(`input[id="guess-1"]`).prop("disabled", true);
 })
 
 
@@ -94,6 +96,7 @@ $(`.pass`).on(`click`, function (e) {
     e.preventDefault();
 // store as variable the target's attribute at position 1
     const num = e.target.attributes[1].value
+    // NEED TO ADD DISABLE FUNCTION HERE AS WELL!!!!!!!!!!!
 
 // for each pass button click per card, change css style to display the p
     // This works
