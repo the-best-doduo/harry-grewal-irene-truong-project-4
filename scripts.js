@@ -51,7 +51,7 @@ $.when(...pokeParty)
             // this yields card-1 to get position of each card bc before, defined let card= a number so ${card} now yields a number
             $(`.card-${card}`).html(`<div>
             <img src = "${arrayOfChoices[randomPartyArray[n]].sprites.front_default}" alt="Pokemon card.">
-            <p>${arrayOfChoices[randomPartyArray[n]].name}</p>
+            <p><span class = "correct-answer">${arrayOfChoices[randomPartyArray[n]].name}</span> </p>
             </div>`);
 
             $(`.card-${card} + form .fieldset`).prepend(`<input type="hidden" value="${arrayOfChoices[randomPartyArray[n]].name}">`);
