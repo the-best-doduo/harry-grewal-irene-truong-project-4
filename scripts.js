@@ -84,8 +84,11 @@ $(`form`).on(`submit`, function (e) {
         $(this).prepend(`<p class='statement'>Incorrect! The correct answer is <span class ="correctAnswer">${correctAnswer}</span></p>`)
         
     }
-    // disables the first input after user clicks submit. Can't get it to work on each button using (this), atm
-    $(`input[id="guess-1"]`).prop("disabled", true);
+    // After determining whether the user's input was correct or incorrect, the chosen card's input text field, submit button, and pass button are all disabled
+    $(this).find(`input[type="text"]`).prop("disabled", true);
+    $(this).find(`input[type="submit"]`).prop("disabled", true);
+    $(this).find(`button[class="pass"]`).prop("disabled", true);
+
 })
 
 
