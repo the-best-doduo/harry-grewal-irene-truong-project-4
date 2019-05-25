@@ -88,10 +88,8 @@ $(`form`).on(`submit`, function (e) {
     // After determining whether the user's input was correct or incorrect, the chosen card's input text field, submit button, and pass button are all disabled
     $(this).find(`input[type="text"]`).prop("disabled", true);
     $(this).find(`input[type="submit"]`).prop("disabled", true).css({ "background": "white", "color":"black" });
-    // the above adds css styling to submit when user clicks submit
-
-
-    $(this).find(`button[class="pass"]`).prop("disabled", true).css({"background" : "blue", "color" : "white"});
+    // the above adds css styling to submit when user clicks submit. below adds styling to pass to prevent hover effect
+    $(this).find(`button[class="pass"]`).prop("disabled", true).css({ "background": "rgba(50,98,153,0.9)", "color" : "white"});
 
     $(this).parent().find(`img`).removeClass("filter-on");
 })
@@ -108,9 +106,11 @@ $(`.pass`).on(`click`, function (e) {
     $(this).css({"background" : "white", "color" : "black"});
     // the above adds css styling to pass when user clicks pass
     $(this).parent().parent().find(`input[type="text"]`).prop("disabled", true);
-    $(this).parent().find(`input[type="submit"]`).prop("disabled", true);
+    $(this).parent().find(`input[type="submit"]`).prop("disabled", true).css({ "background": "rgba(50,98,153,0.9)", "color": "white" });;
+    // the above adds styling to submit after pass is clicked
     $(this).prop("disabled", true);
     $(this).parent().parent().parent().parent().find(`img`).removeClass("filter-on");
+    
     
     
     
