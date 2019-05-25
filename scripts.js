@@ -12,6 +12,11 @@ function getPokemon(number) {
     })
 }
 
+// defining score as global variable
+let score = 0;
+
+
+
 // 6 pokemon to be displayed grabs from the API. calling the function getPokemon the same time we are pushing it --> pokeParty is an array of promises - wait for the data to come back
 const pokeParty = [];
 // randomPartyArray is the array which will contain the objects for 6 random pokemon
@@ -72,8 +77,12 @@ $(`form`).on(`submit`, function (e) {
     // checks if userGuess is correct or not
     if (userGuess === correctAnswer) {
         console.log("correct");
-    } else {
+        $(this).prepend(`<p>Correct!</p>`);
+        score = score + 1;
+    } else {     
         console.log("incorrect");
+        $(this).prepend(`<p>Incorrect! The correct answer is <span>${correctAnswer}</span></p>`)
+        
     }
 })
 
@@ -83,14 +92,27 @@ $(`form`).on(`submit`, function (e) {
 // FUNCTION: when click pass, reveal pokemon name
 $(`.pass`).on(`click`, function (e) {
     e.preventDefault();
-    console.log("pressed");
 // store as variable the target's attribute at position 1
     const num = e.target.attributes[1].value
+
 // for each pass button click per card, change css style to display the p
-    $(`.card-${num} p`).css({"display": "block"})
+    // This works
+    // $(`.card-${num} p`).css({"display": "block"})
+// NEED TO PUT 'IS THE CORRECT ANSWER' IN A P or SPAN
+    $(`.card-${num} p`).append(` is the correct answer.`).css({ "display": "block" })
+
 
     // $(`.card-${num} p`).addClass(`card-reveal`)
 });
+
+
+
+
+// FUNCTION: final submit button shows score. This may be already connected to the above when factoring in submit functionality
+$(`.submit`).on(`click`, function(e){
+    e.preventDefault();
+    $(`.results`).html(`<div>Your final score is ${score}!</div>`)
+})
 
 
 // reset button reloads page to new game
