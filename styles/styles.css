@@ -173,6 +173,10 @@ img {
   margin: 0 auto;
   max-width: 1200px; }
 
+.instructions-area,
+.results-area {
+  background: #fdcb04; }
+
 header {
   background: #dd1a17; }
 
@@ -206,9 +210,6 @@ h4 {
 
 p {
   font-size: 1.5rem; }
-
-.instructions-area {
-  background: #fdcb04; }
 
 .instructions-content {
   display: -webkit-box;
@@ -299,13 +300,19 @@ p {
 .fieldset {
   text-align: center; }
 
+input[type=text],
 input[type=submit],
 button.pass,
 .submit,
 .reset {
-  padding: 10px;
   border: 1px solid #fdcb04;
   border-radius: 10px;
+  padding: 10px; }
+
+input[type=submit],
+button.pass,
+.submit,
+.reset {
   margin: 10px 0;
   background-color: rgba(50, 98, 153, 0.9);
   color: #fdcb04;

@@ -34,6 +34,12 @@ img {
     max-width: 1200px;
 }
 
+// background colours
+.instructions-area,
+.results-area {
+    background: $accent;
+}
+
 
 // header styles
 header {
