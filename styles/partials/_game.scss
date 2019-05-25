@@ -16,7 +16,6 @@
         align-items: center;
         border: 5px solid $accent;
         border-radius: 30px;
-        
     }
 }
 
@@ -34,44 +33,49 @@
 .card-6 {
     display:flex;
     flex-direction: column;
+    div {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
     p {
         display:none;
+        padding: 5px;
+        text-align: center;
     }
 }
 
 .fieldset {
     text-align: center;
 }
-// .card-reveal {
-//     display:block;
-// }
 
-
+// included reset button styles here bc common with other buttons
 input[type=submit],
 button.pass,
-.submit {
-    padding: 5px;
+.submit,
+.reset {
+    padding: 10px;
     border: 1px solid $accent;
-    border-radius: 40px;
-    margin: 5px 0;
+    border-radius: 10px;
+    margin: 10px 0;
     background-color: $border;
     color: $accent;
+    text-transform: uppercase;
+    &:hover,
+    &:focus {
+        border: 1px $accent solid;
+        color: black;
+        background: white;
+        transition: ease 0.2s;
+    }
+}
+
+.submit,
+.reset {
+    font-size: 2.5rem;
 }
 
 .button-container {
     text-align: center;
 }
 
-.statement {
-    text-align: center;
-    font-size: 1.25rem;
-}
-
-.correctAnswer {
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.final-submit {
-    background-color: $secondary;
-}

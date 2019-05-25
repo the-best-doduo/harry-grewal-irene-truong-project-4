@@ -270,26 +270,63 @@ p {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
+  .card-1 div,
+  .card-2 div,
+  .card-3 div,
+  .card-4 div,
+  .card-5 div,
+  .card-6 div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
   .card-1 p,
   .card-2 p,
   .card-3 p,
   .card-4 p,
   .card-5 p,
   .card-6 p {
-    display: none; }
+    display: none;
+    padding: 5px;
+    text-align: center; }
 
 .fieldset {
   text-align: center; }
 
 input[type=submit],
 button.pass,
-.submit {
-  padding: 5px;
+.submit,
+.reset {
+  padding: 10px;
   border: 1px solid #fdcb04;
-  border-radius: 40px;
-  margin: 5px 0;
+  border-radius: 10px;
+  margin: 10px 0;
   background-color: rgba(50, 98, 153, 0.9);
-  color: #fdcb04; }
+  color: #fdcb04;
+  text-transform: uppercase; }
+  input[type=submit]:hover, input[type=submit]:focus,
+  button.pass:hover,
+  button.pass:focus,
+  .submit:hover,
+  .submit:focus,
+  .reset:hover,
+  .reset:focus {
+    border: 1px #fdcb04 solid;
+    color: black;
+    background: white;
+    -webkit-transition: ease 0.2s;
+    -o-transition: ease 0.2s;
+    transition: ease 0.2s; }
+
+.submit,
+.reset {
+  font-size: 2.5rem; }
 
 .button-container {
   text-align: center; }
@@ -302,14 +339,8 @@ button.pass,
   text-transform: uppercase;
   text-align: center; }
 
-.final-submit {
-  background-color: #ec3228; }
-
-.bottom-button {
-  background-color: #ec3228; }
-
-button[type=reset] {
-  padding: 5px; }
+.reset-container {
+  background: #ec3228; }
 
 footer {
   text-align: center;

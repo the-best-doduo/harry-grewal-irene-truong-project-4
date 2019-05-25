@@ -1,7 +1,15 @@
-.bottom-button {
-    background-color: $secondary;
+.statement {
+    text-align: center;
+    font-size: 1.25rem;
 }
 
-button[type=reset] {
-    padding: 5px;
+.correctAnswer {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+// reset button styles // also located in _game.scss due to similar styles with _game buttons
+.reset-container {
+    background: $secondary;
 }
