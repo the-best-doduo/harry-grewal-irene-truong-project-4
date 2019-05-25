@@ -133,10 +133,19 @@ $(`.pass`).on(`click`, function (e) {
 // FUNCTION: final submit button shows score
 $(`.submit`).on(`click`, function(e){
     e.preventDefault();
-
+    
 // FUNCTION IF NOT ALL FIELDS ARE FULL
 
     $(`.results`).html(`<div><h3>Your final score is ${score} out of 6!</h3></div>`)
+
+    // When user clicks final submit button, all the input fields, submit buttons and pass buttons are disabled for all cards. This ensures the user can't submit without answering, and then add in answers to change their score
+    $(this).parent().parent().find(`input[type="text"]`).prop("disabled", true);
+    $(this).parent().parent().find(`input[type="submit"]`).prop("disabled", true).css({ "background": "white", "color": "black" });
+    $(this).parent().parent().find(`button[class="pass"]`).prop("disabled", true).css({ "background": "white", "color": "black" });
+    
+    // Disables the final submit as well to match the color scheme of all disabled buttons
+    $(this).prop("disabled", true).css({ "background": "white", "color": "black" });
+    
 })
 
 
