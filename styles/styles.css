@@ -165,6 +165,11 @@ html {
   line-height: 1.6;
   font-family: "Abel", sans-serif; }
 
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%; }
+
 .wrapper {
   margin: 0 auto;
   max-width: 1200px; }
@@ -180,6 +185,28 @@ h1 {
   line-height: 1.2;
   text-align: center;
   text-shadow: 2px 2px 5px #326299; }
+
+h3 {
+  font-size: 2rem;
+  color: black;
+  font-family: "Roboto Slab", serif;
+  text-transform: capitalize;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 2px 2px 5px #326299;
+  text-shadow: none; }
+
+h4 {
+  font-size: 1rem;
+  color: black;
+  font-family: "Roboto Slab", serif;
+  text-transform: capitalize;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 2px 2px 5px #326299; }
+
+p {
+  font-size: 1.5rem; }
 
 .instructions-area {
   background: #fdcb04; }
@@ -250,9 +277,6 @@ h1 {
 
 .fieldset {
   text-align: center; }
-
-.card-reveal {
-  display: block; }
 
 input[type=submit],
 button.pass,

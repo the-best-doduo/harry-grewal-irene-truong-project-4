@@ -13,9 +13,9 @@ $heading-font:'Roboto Slab', serif;
 
 
 // mixins
-@mixin heading ($font-size, $tt) {
+@mixin heading ($font-size, $color, $tt) {
     font-size: $font-size;
-    color: $accent;
+    color: $color;
     font-family: $heading-font;
     text-transform: $tt;
     line-height: 1.2;

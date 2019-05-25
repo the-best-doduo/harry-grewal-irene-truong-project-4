@@ -98,25 +98,23 @@ $(`.pass`).on(`click`, function (e) {
 // for each pass button click per card, change css style to display the p
     // This works
     // $(`.card-${num} p`).css({"display": "block"})
-// NEED TO PUT 'IS THE CORRECT ANSWER' IN A P or SPAN
+// append automatically puts the content in () into a p!!!
     $(`.card-${num} p`).append(` is the correct answer.`).css({ "display": "block" })
-
-
-    // $(`.card-${num} p`).addClass(`card-reveal`)
 });
 
 
 
 
-// FUNCTION: final submit button shows score. This may be already connected to the above when factoring in submit functionality
+// FUNCTION: final submit button shows score
 $(`.submit`).on(`click`, function(e){
     e.preventDefault();
-    $(`.results`).html(`<div>Your final score is ${score}!</div>`)
+    $(`.results`).html(`<div><h3>Your final score is ${score}!</h3></div>`)
 })
 
 
 // reset button reloads page to new game
 $(`.reset`).click(function () {
+    $(`form`).trigger(`reset`);
     location.reload();
 });
 // document ready

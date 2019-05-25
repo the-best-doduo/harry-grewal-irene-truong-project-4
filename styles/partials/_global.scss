@@ -23,11 +23,11 @@ html {
     font-family: $text;
 }
 
-// img {
-//     display:block;
-//     width:100%;
-//     max-width: 100%;
-// }
+img {
+    display:block;
+    width:100%;
+    max-width: 100%;
+}
 
 .wrapper {
     margin: 0 auto;
@@ -40,5 +40,19 @@ header {
     background: $main;
 }
 h1 {
-    @include heading(4rem, uppercase);
+    @include heading(4rem, $accent, uppercase);
+}
+
+h3 {
+    @include heading(2rem, black, capitalize);
+    text-shadow: none;
+}
+
+h4 {
+    @include heading(1rem, black, capitalize)
+}
+
+// font styles
+p {
+    font-size: 1.5rem;
 }
