@@ -331,6 +331,11 @@ button.pass,
     -o-transition: ease 0.2s;
     transition: ease 0.2s; }
 
+.clicked {
+  border: 1px #fdcb04 solid;
+  color: black;
+  background: white; }
+
 .submit,
 .reset {
   font-size: 2.5rem; }
@@ -338,11 +343,10 @@ button.pass,
 .button-container {
   text-align: center; }
 
-.statement {
-  text-align: center;
-  font-size: 1.25rem; }
+.results-statement {
+  text-align: center; }
 
-.correctAnswer {
+.correct-answer {
   text-transform: uppercase;
   text-align: center; }
 

@@ -77,6 +77,12 @@ button.pass,
     }
 }
 
+.clicked {
+    border: 1px $accent solid;
+    color: black;
+    background: white;
+}
+
 .submit,
 .reset {
     font-size: 2.5rem;
