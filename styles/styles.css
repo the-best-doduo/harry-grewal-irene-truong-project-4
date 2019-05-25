@@ -256,7 +256,7 @@ p {
     border-radius: 30px; }
 
 .card img {
-  width: 150px; }
+  width: 250px; }
 
 .card-1,
 .card-2,
@@ -297,6 +297,14 @@ p {
     padding: 5px;
     text-align: center; }
 
+.answer-statement {
+  text-align: center;
+  padding: 5px; }
+
+.correct-answer {
+  text-transform: uppercase;
+  text-align: center; }
+
 .fieldset {
   text-align: center; }
 
@@ -331,11 +339,6 @@ button.pass,
     -o-transition: ease 0.2s;
     transition: ease 0.2s; }
 
-.clicked {
-  border: 1px #fdcb04 solid;
-  color: black;
-  background: white; }
-
 .submit,
 .reset {
   font-size: 2.5rem; }
@@ -343,12 +346,8 @@ button.pass,
 .button-container {
   text-align: center; }
 
-.results-statement {
-  text-align: center; }
-
-.correct-answer {
-  text-transform: uppercase;
-  text-align: center; }
+.results h3 {
+  padding: 20px; }
 
 .reset-container {
   background: #ec3228; }

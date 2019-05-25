@@ -78,18 +78,17 @@ $(`form`).on(`submit`, function (e) {
     // checks if userGuess is correct or not
     if (userGuess === correctAnswer) {
         console.log("correct");
-        $(this).prepend(`<p class = "results-statement">Correct!</p>`);
+        $(this).prepend(`<p class = "answer-statement">Correct!</p>`);
 
         score = score + 1;
     } else {     
         console.log("incorrect");
-        $(this).prepend(`<p class='results-statement'>Incorrect! The correct answer is <span class ="correct-answer">${correctAnswer}</span></p>`);
+        $(this).prepend(`<p class='answer-statement'>Incorrect! The correct answer is <span class ="correct-answer">${correctAnswer}</span></p>`);
     }
     // After determining whether the user's input was correct or incorrect, the chosen card's input text field, submit button, and pass button are all disabled
     $(this).find(`input[type="text"]`).prop("disabled", true);
-//I THINK WE SHOULD .addClass() here
-    $(this).find(`input[type="submit"]`).prop("disabled", true);
-
+    $(this).find(`input[type="submit"]`).prop("disabled", true).css({ "background": "white", "color":"black" });
+    // the above adds css styling to submit when user clicks submit
     $(this).find(`button[class="pass"]`).prop("disabled", true);
 
 })
@@ -103,6 +102,8 @@ $(`.pass`).on(`click`, function (e) {
 // store as variable the target's attribute at position 1
     const num = e.target.attributes[1].value
     // After clicking pass, disables the input text field, submit button, and pass button of the selected card
+    $(this).css({"background" : "white", "color" : "black"});
+    // the above adds css styling to pass when user clicks pass
     $(this).parent().parent().find(`input[type="text"]`).prop("disabled", true);
     $(this).parent().find(`input[type="submit"]`).prop("disabled", true);
     $(this).prop("disabled", true);
@@ -123,7 +124,7 @@ $(`.pass`).on(`click`, function (e) {
 // FUNCTION: final submit button shows score
 $(`.submit`).on(`click`, function(e){
     e.preventDefault();
-    $(`.results`).html(`<div><h3>Your final score is ${score}!</h3></div>`)
+    $(`.results`).html(`<div><h3>Your final score is ${score} out of 6!</h3></div>`)
 })
 
 

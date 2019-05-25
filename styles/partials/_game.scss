@@ -21,7 +21,7 @@
 
 .card {
     img {
-        width: 150px;
+        width: 250px;
     }
 }
 
@@ -44,6 +44,17 @@
         text-align: center;
     }
 }
+
+.answer-statement {
+    text-align: center;
+    padding:5px;
+}
+
+.correct-answer {
+    text-transform: uppercase;
+    text-align: center;
+}
+
 
 .fieldset {
     text-align: center;
@@ -75,12 +86,6 @@ button.pass,
         background: white;
         transition: ease 0.2s;
     }
-}
-
-.clicked {
-    border: 1px $accent solid;
-    color: black;
-    background: white;
 }
 
 .submit,
