@@ -99,7 +99,13 @@ $(`.pass`).on(`click`, function (e) {
     e.preventDefault();
 // store as variable the target's attribute at position 1
     const num = e.target.attributes[1].value
-    // NEED TO ADD DISABLE FUNCTION HERE AS WELL!!!!!!!!!!!
+    // After clicking pass, disables the input text field, submit button, and pass button of the selected card
+    $(this).parent().parent().find(`input[type="text"]`).prop("disabled", true);
+    $(this).parent().find(`input[type="submit"]`).prop("disabled", true);
+    $(this).prop("disabled", true);
+    
+    
+    
 
 // for each pass button click per card, change css style to display the p
     // This works
