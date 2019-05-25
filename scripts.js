@@ -88,7 +88,7 @@ $(`form`).on(`submit`, function (e) {
         score = score + 1;
     } else {     
         console.log("incorrect");
-        $(this).prepend(`<p class='answer-statement'>Incorrect! The correct answer is <span class ="correct-answer">${correctAnswer}</span></p>`);
+        $(this).prepend(`<p class='answer-statement'>The correct answer was <span class ="correct-answer">${correctAnswer}</span></p>`);
     }
     // After determining whether the user's input was correct or incorrect, the chosen card's input text field, submit button, and pass button are all disabled
     $(this).find(`input[type="text"]`).prop("disabled", true);
@@ -145,6 +145,16 @@ $(`.submit`).on(`click`, function(e){
     
     // Disables the final submit as well to match the color scheme of all disabled buttons
     $(this).prop("disabled", true).css({ "background": "white", "color": "black" });
+
+    $(this).parent().parent().find(`img`).removeClass("filter-on");
+
+
+    // Printing out the statement with the pokemon name when the user leaves a card blank
+    // let correctAnswer = $(this).parent().parent().find('input[type="hidden"]').val();
+    // $(this).parent().parent().find(`form`).prepend(`<p class='answer-statement'>The correct answer was <span class ="correct-answer">${correctAnswer}</span></p>`);
+    
+
+    // $(this).parent().parent().find('input[type="hidden"]').css({"display" : "block"});
     
 })
 
