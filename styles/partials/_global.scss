@@ -43,7 +43,7 @@ img {
 
 // header styles
 header {
-    background: $main;
+    background: $red;
 }
 h1 {
     @include heading(4rem, $accent, uppercase);

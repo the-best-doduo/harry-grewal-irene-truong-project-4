@@ -89,8 +89,10 @@ $(`form`).on(`submit`, function (e) {
     $(this).find(`input[type="text"]`).prop("disabled", true);
     $(this).find(`input[type="submit"]`).prop("disabled", true).css({ "background": "white", "color":"black" });
     // the above adds css styling to submit when user clicks submit
-    $(this).find(`button[class="pass"]`).prop("disabled", true);
+    // $(this).find(`button[class="pass"]`).prop("disabled", true);
 
+
+    $(this).find(`button[class="pass"]`).prop("disabled", true).css({"background" : "blue", "color" : "white"});
 })
 
 
