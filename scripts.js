@@ -80,11 +80,14 @@ $(`form`).on(`submit`, function (e) {
 
     // checks if userGuess is correct or not
     if (userGuess === correctAnswer) {
-        $(this).prepend(`<p class = "answer-statement completed">Correct!</p>`);
-
+        $(this).prepend(`<p class = "answer-statement">Correct!</p>`);
+        $(this).parent().find('.raptor').addClass('completed');
+        // console.log($(this).parent());
         score = score + 1;
     } else {     
-        $(this).prepend(`<p class='answer-statement completed'>The correct answer is <span class ="correct-answer">${correctAnswer}</span></p>`);
+        $(this).prepend(`<p class='answer-statement'>The correct answer is <span class ="correct-answer">${correctAnswer}</span></p>`);
+        // console.log($(this).parent());
+        $(this).parent().find('.raptor').addClass('completed');
     }
     // After determining whether the user's input was correct or incorrect, the chosen card's input text field, submit button, and pass button are all disabled
     $(this).find(`input[type="text"]`).prop("disabled", true);
@@ -155,13 +158,22 @@ $(`.submit`).on(`click`, function(e){
     //     console.log("has nothing");
     // }
     // console.log($(`input[type="text"]`).val());
-    // STUFF IM WORKING ON
-    if ($(`p`).hasClass("completed") == false) {
-        // console.log("completed");
-        $(this).parent().parent().find(`p`).css({ "display": "block" });
-    }
 
-    // $(this).parent().parent().find(`p`).css({"display" : "block"});
+    // STUFF IM WORKING ON
+    // if ($(`p`).hasClass("completed") == true) {
+    //     // console.log("completed");
+    //     // $(this).parent().parent().find(`p`).css({ "display": "block" });
+    //     $(this).parent().parent().find(`p`).css({ "display": "none" });
+    // } else if ($(`p`).hasClass("completed") == false) {
+    //     $(this).parent().parent().find(`p`).css({ "display": "block" });
+    // }
+    for (let i=1; i < 7; i ++) {
+        if (!($(`.card-${i}`).hasClass('completed'))) {
+            $(`.card-${i}`).find(`p`).css({ "display": "block" });
+        }
+        
+    }
+    // $(this).parent().parent().find(`p`).css({ "display": "block" });
 
 
     $(`.results`).html(`<div><h3>Your final score is ${score} out of 6!</h3></div>`)
