@@ -147,7 +147,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  border: 1px solid red; }
 
 .skip-link {
   position: absolute;
@@ -205,9 +206,9 @@ p {
   font-size: 1.5rem; }
 
 body {
-  background: -webkit-radial-gradient(white, rgba(50, 98, 153, 0.9), #dd1a17);
-  background: -o-radial-gradient(white, rgba(50, 98, 153, 0.9), #dd1a17);
-  background: radial-gradient(white, rgba(50, 98, 153, 0.9), #dd1a17); }
+  background: -webkit-radial-gradient(red);
+  background: -o-radial-gradient(red);
+  background: radial-gradient(red); }
 
 .instructions-content {
   display: -webkit-box;
@@ -216,7 +217,8 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column; }
+  flex-direction: column;
+  padding: 0 10px; }
 
 .game-content {
   display: -webkit-box;
@@ -354,3 +356,60 @@ footer {
   text-align: center; }
   footer h4 {
     color: #fdcb04; }
+
+@media (max-width: 972px) {
+  h1 {
+    font-size: 3rem; }
+  h3 {
+    font-size: 1.8rem; }
+  p {
+    font-size: 1.3rem; }
+  .game-content {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .game-content .card {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+      flex: 0 0 40%; }
+  .submit,
+  .reset {
+    font-size: 2rem; } }
+
+@media (max-width: 750px) {
+  h1 {
+    font-size: 2.6rem; }
+  h3 {
+    font-size: 1.6rem; }
+  p {
+    font-size: 1.2rem; }
+  .card img {
+    width: 220px; }
+  input[type=text] {
+    width: 80%; }
+  .submit,
+  .reset {
+    font-size: 1.6rem; } }
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.6rem; }
+  h3 {
+    font-size: 1.4rem; }
+  p {
+    font-size: 1.1rem; }
+  .card img {
+    width: 200px; }
+  .submit,
+  .reset {
+    font-size: 1.4rem; } }
+
+@media (max-width: 550px) {
+  .game-content {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .game-content .card {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 60%;
+      flex: 0 0 60%; } }
