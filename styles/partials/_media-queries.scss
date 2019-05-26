@@ -4,7 +4,7 @@
     }
 
     h3 {
-        font-size: 1.8rem;
+        font-size: 0.9rem;
     }
 
     p {
@@ -29,7 +29,7 @@
         font-size: 2.6rem;
     }
 
-    h3 {
+    h2 {
         font-size: 1.6rem;
     }
 
@@ -55,13 +55,17 @@
 
 }
 
-@media(max-width:600px) {
+@media(max-width:632px) {
     h1 {
-        font-size: 2.6rem;
+        font-size: 2.3rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
     }
 
     h3 {
-        font-size: 1.4rem;
+        font-size: 0.8rem;
     }
 
     p {
@@ -82,7 +86,6 @@
     .reset {
         font-size: 1.4rem;
     }
-
 }
 
 @media(max-width:480px) {
@@ -114,9 +117,12 @@
         width:95%;
     }
 
+    .final-submit-container,
     .reset-container {
-        width:90%;
+        width:80%;
+        margin:0 auto;
     }
+
 
     input[type="submit"],
     button.pass {

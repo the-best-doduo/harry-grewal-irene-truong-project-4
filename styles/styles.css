@@ -149,16 +149,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   padding: 0;
   margin: 0; }
 
-.skip-link {
-  position: absolute;
-  left: -1000px;
-  top: 5px;
-  z-index: 999;
-  background: black;
-  color: white; }
-  .skip-link:focus {
-    left: 0; }
-
 html {
   font-size: 125%;
   line-height: 1.6;
@@ -173,6 +163,21 @@ img {
   margin: 0 auto;
   max-width: 1200px; }
 
+body {
+  background: -webkit-radial-gradient(rgba(255, 255, 255, 0.3), #dd1a17);
+  background: -o-radial-gradient(rgba(255, 255, 255, 0.3), #dd1a17);
+  background: radial-gradient(rgba(255, 255, 255, 0.3), #dd1a17); }
+
+.skip-link {
+  position: absolute;
+  left: -1000px;
+  top: 5px;
+  z-index: 999;
+  background: #060f0e;
+  color: white; }
+  .skip-link:focus {
+    left: 0; }
+
 h1 {
   font-size: 4rem;
   color: #fdcb04;
@@ -180,34 +185,33 @@ h1 {
   text-transform: uppercase;
   line-height: 1.2;
   text-align: center;
-  text-shadow: 2px 2px 5px #326299; }
+  text-shadow: 2px 2px 8px rgba(44, 86, 134, 0.9);
+  margin: 30px 0; }
+
+h2 {
+  font-size: 2rem;
+  color: #060f0e;
+  font-family: "Roboto Slab", serif;
+  text-transform: capitalize;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(44, 86, 134, 0.9);
+  text-shadow: none;
+  margin-bottom: 20px; }
 
 h3 {
-  font-size: 2rem;
-  color: black;
+  font-size: 1rem;
+  color: #060f0e;
   font-family: "Roboto Slab", serif;
   text-transform: capitalize;
   line-height: 1.2;
   text-align: center;
-  text-shadow: 2px 2px 5px #326299;
+  text-shadow: 2px 2px 8px rgba(44, 86, 134, 0.9);
   text-shadow: none; }
 
-h4 {
-  font-size: 1rem;
-  color: black;
-  font-family: "Roboto Slab", serif;
-  text-transform: capitalize;
-  line-height: 1.2;
-  text-align: center;
-  text-shadow: 2px 2px 5px #326299; }
-
 p {
-  font-size: 1.5rem; }
-
-body {
-  background: -webkit-radial-gradient(rgba(255, 255, 255, 0.3), #dd1a17);
-  background: -o-radial-gradient(rgba(255, 255, 255, 0.3), #dd1a17);
-  background: radial-gradient(rgba(255, 255, 255, 0.3), #dd1a17); }
+  font-size: 1.5rem;
+  color: #060f0e; }
 
 .instructions-content {
   display: -webkit-box;
@@ -348,19 +352,21 @@ button.pass,
 .button-container {
   text-align: center; }
 
-.results h3 {
+.results h2 {
   padding: 20px; }
 
 footer {
-  text-align: center; }
-  footer h4 {
-    color: #fdcb04; }
+  text-align: center;
+  background-color: #060f0e; }
+  footer h3 {
+    color: #fdcb04;
+    padding: 10px 0; }
 
 @media (max-width: 972px) {
   h1 {
     font-size: 3rem; }
   h3 {
-    font-size: 1.8rem; }
+    font-size: 0.9rem; }
   p {
     font-size: 1.3rem; }
   .game-content {
@@ -378,7 +384,7 @@ footer {
 @media (max-width: 768px) {
   h1 {
     font-size: 2.6rem; }
-  h3 {
+  h2 {
     font-size: 1.6rem; }
   p {
     font-size: 1.2rem;
@@ -391,11 +397,13 @@ footer {
   .reset {
     font-size: 1.6rem; } }
 
-@media (max-width: 600px) {
+@media (max-width: 632px) {
   h1 {
-    font-size: 2.6rem; }
-  h3 {
+    font-size: 2.3rem; }
+  h2 {
     font-size: 1.4rem; }
+  h3 {
+    font-size: 0.8rem; }
   p {
     font-size: 1.1rem; }
   .card img {
@@ -440,8 +448,10 @@ footer {
     -ms-flex-direction: column;
     flex-direction: column;
     width: 95%; }
+  .final-submit-container,
   .reset-container {
-    width: 90%; }
+    width: 80%;
+    margin: 0 auto; }
   input[type="submit"],
   button.pass {
     margin: 0;

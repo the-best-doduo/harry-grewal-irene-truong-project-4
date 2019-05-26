@@ -91,9 +91,10 @@ $(`form`).on(`submit`, function (e) {
     }
     // After determining whether the user's input was correct or incorrect, the chosen card's input text field, submit button, and pass button are all disabled
     $(this).find(`input[type="text"]`).prop("disabled", true);
-    $(this).find(`input[type="submit"]`).prop("disabled", true).css({ "background": "white", "color":"black" });
+    $(this).find(`input[type="submit"]`).prop("disabled", true).css({ "background": "rgb(218,218,218)", "color":"rgb(152,132,127)" });
     // the above adds css styling to submit when user clicks submit. below adds styling to pass to prevent hover effect
-    $(this).find(`button[class="pass"]`).prop("disabled", true).css({ "background": "rgba(50,98,153,0.9)", "color" : "white"});
+    $(this).find(`button[class="pass"]`).prop("disabled", true).css({ "background": "rgba(50,98,153,0.9)", "color":"rgb(152,132,127)"});
+
 
     $(this).parent().find(`img`).removeClass("filter-on");
 })
@@ -107,10 +108,10 @@ $(`.pass`).on(`click`, function (e) {
 // store as variable the target's attribute at position 1
     const num = e.target.attributes[1].value
     // After clicking pass, disables the input text field, submit button, and pass button of the selected card
-    $(this).css({"background" : "white", "color" : "black"});
+    $(this).css({ "background": "rgb(218,218,218)", "color": "rgb(152,132,127)" });
     // the above adds css styling to pass when user clicks pass
     $(this).parent().parent().find(`input[type="text"]`).prop("disabled", true);
-    $(this).parent().find(`input[type="submit"]`).prop("disabled", true).css({ "background": "rgba(50,98,153,0.9)", "color": "white" });;
+    $(this).parent().find(`input[type="submit"]`).prop("disabled", true).css({ "background": "rgba(50,98,153,0.9)", "color": "rgb(152,132,127)" });
     // the above adds styling to submit after pass is clicked
     $(this).prop("disabled", true);
     $(this).parent().parent().parent().parent().find(`img`).removeClass("filter-on");
@@ -120,9 +121,6 @@ $(`.pass`).on(`click`, function (e) {
     
 
 // for each pass button click per card, change css style to display the p
-    // This works
-    // $(`.card-${num} p`).css({"display": "block"})
-// append automatically puts the content in () into a p!!!
     $(`.card-${num} p`).append(` is the correct answer`).css({ "display": "block" })
 });
 
@@ -138,16 +136,14 @@ $(`.submit`).on(`click`, function(e){
 
     // When user clicks final submit button, all the input fields, submit buttons and pass buttons are disabled for all cards. This ensures the user can't submit without answering, and then add in answers to change their score
     $(this).parent().parent().find(`input[type="text"]`).prop("disabled", true);
-    $(this).parent().parent().find(`input[type="submit"]`).prop("disabled", true).css({ "background": "white", "color": "black" });
-    $(this).parent().parent().find(`button[class="pass"]`).prop("disabled", true).css({ "background": "white", "color": "black" });
+    $(this).parent().parent().find(`input[type="submit"]`).prop("disabled", true).css({ "background": "rgba(50,98,153,0.9)", "color": "rgb(152,132,127)" });
+    $(this).parent().parent().find(`button[class="pass"]`).prop("disabled", true).css({ "background": "rgba(50,98,153,0.9)", "color": "rgb(152,132,127)" });
     
     // Disables the final submit as well to match the color scheme of all disabled buttons
-    $(this).prop("disabled", true).css({ "background": "white", "color": "black" });
+    $(this).prop("disabled", true).css({ "background": "rgba(50,98,153,0.9)", "color": "rgb(152,132,127)" });
 
     $(this).parent().parent().find(`img`).removeClass("filter-on");
 
-
-    // $(`.results`).html(`<div><h3>Your final score is ${score} out of 6!</h3></div>`)
 
 
 
@@ -176,7 +172,7 @@ $(`.submit`).on(`click`, function(e){
     // $(this).parent().parent().find(`p`).css({ "display": "block" });
 
 
-    $(`.results`).html(`<div><h3>Your final score is ${score} out of 6!</h3></div>`)
+    $(`.results`).html(`<div><h2>Your final score is ${score} out of 6!</h2></div>`)
 
 
 

@@ -1,20 +1,8 @@
+// style stripping
 *{
     padding:0;
     margin:0;
     // border: 1px solid red;
-}
-
-.skip-link {
-    position: absolute;
-    left: -1000px;
-    top: 5px;
-    z-index: 999;
-// change colours after defining in variables/mixins partial
-    background: black;
-    color: white;
-    &:focus {
-        left:0;
-    }
 }
 
 html {
@@ -34,37 +22,43 @@ img {
     max-width: 1200px;
 }
 
-// background colours
-.instructions-area,
-.results-area {
-    // background: $accent;
+// background style
+body {
+    background:radial-gradient(rgba(255,255,255,0.3), $bg-col);
 }
 
-
-// header styles
-header {
-    // background: $red;
+// skip-link
+.skip-link {
+    position: absolute;
+    left: -1000px;
+    top: 5px;
+    z-index: 999;
+    background: $accent-2;
+    color: white;
+    &:focus {
+        left:0;
+    }
 }
+
+// heading styles
 h1 {
     @include heading(4rem, $accent, uppercase);
+    margin: 30px 0;
+}
+
+h2 {
+    @include heading(2rem, $accent-2, capitalize);
+    text-shadow: none;
+    margin-bottom:20px;
 }
 
 h3 {
-    @include heading(2rem, black, capitalize);
+    @include heading(1rem,$accent-2, capitalize);
     text-shadow: none;
-}
-
-h4 {
-    @include heading(1rem, black, capitalize)
 }
 
 // generic font styles
 p {
     font-size: 1.5rem;
-}
-
-// background style
-body {
-    background:radial-gradient(rgba(255,255,255,0.3), $red);
-    // background: red;
+    color: $accent-2;
 }

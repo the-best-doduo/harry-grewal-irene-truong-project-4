@@ -1,13 +1,17 @@
 // variables
-$red: rgb(221,26,23);
-$secondary:rgb(236,50,40);
 
-// border
-$border: rgba(50,98,153,0.9);
+// background colour
+$bg-col: rgb(221,26,23);
+
+// card-colours
+$card-bg: rgba(50,98,153,0.9);
 
 $accent: rgb(253,203,4);
 
-// text
+// main text colour
+$accent-2: #060f0e;
+
+// text font families
 $text: 'Abel', sans-serif;
 $heading-font:'Roboto Slab', serif;
 
@@ -20,6 +24,6 @@ $heading-font:'Roboto Slab', serif;
     text-transform: $tt;
     line-height: 1.2;
     text-align: center;
-    text-shadow: 2px 2px 5px rgb(50,98,153);
+    text-shadow: 2px 2px 8px darken($card-bg, 5%);
 }
 
