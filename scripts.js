@@ -77,18 +77,14 @@ $(`form`).on(`submit`, function (e) {
     // The value the user inputted is automatically converted to lower case to prevent capitalization errors
     let userGuess = $(this).find('input[type="text"]').val().toLowerCase();
     let correctAnswer = $(this).find('input[type="hidden"]').val();
-    console.log(userGuess);
-    console.log(correctAnswer);
 
     // checks if userGuess is correct or not
     if (userGuess === correctAnswer) {
-        console.log("correct");
         $(this).prepend(`<p class = "answer-statement">Correct!</p>`);
 
         score = score + 1;
     } else {     
-        console.log("incorrect");
-        $(this).prepend(`<p class='answer-statement'>The correct answer was <span class ="correct-answer">${correctAnswer}</span></p>`);
+        $(this).prepend(`<p class='answer-statement'>The correct answer is <span class ="correct-answer">${correctAnswer}</span></p>`);
     }
     // After determining whether the user's input was correct or incorrect, the chosen card's input text field, submit button, and pass button are all disabled
     $(this).find(`input[type="text"]`).prop("disabled", true);
@@ -124,7 +120,7 @@ $(`.pass`).on(`click`, function (e) {
     // This works
     // $(`.card-${num} p`).css({"display": "block"})
 // append automatically puts the content in () into a p!!!
-    $(`.card-${num} p`).append(` is the correct answer.`).css({ "display": "block" })
+    $(`.card-${num} p`).append(` is the correct answer`).css({ "display": "block" })
 });
 
 
@@ -136,7 +132,6 @@ $(`.submit`).on(`click`, function(e){
     
 // FUNCTION IF NOT ALL FIELDS ARE FULL
 
-    $(`.results`).html(`<div><h3>Your final score is ${score} out of 6!</h3></div>`)
 
     // When user clicks final submit button, all the input fields, submit buttons and pass buttons are disabled for all cards. This ensures the user can't submit without answering, and then add in answers to change their score
     $(this).parent().parent().find(`input[type="text"]`).prop("disabled", true);
@@ -147,6 +142,19 @@ $(`.submit`).on(`click`, function(e){
     $(this).prop("disabled", true).css({ "background": "white", "color": "black" });
 
     $(this).parent().parent().find(`img`).removeClass("filter-on");
+
+
+    // $(`.results`).html(`<div><h3>Your final score is ${score} out of 6!</h3></div>`)
+
+
+
+// gets hidden p to show up
+
+    $(this).parent().parent().find(`p`).css({"display" : "block"});
+
+
+    $(`.results`).html(`<div><h3>Your final score is ${score} out of 6!</h3></div>`)
+
 
 
     // Printing out the statement with the pokemon name when the user leaves a card blank
