@@ -17,25 +17,27 @@ function getPokemon(number) {
 }
 
 // defining score as global variable
-let score = 0;
+pokemonApp.score = 0;
 
 
 
 // 6 pokemon to be displayed grabs from the API. calling the function getPokemon the same time we are pushing it --> pokeParty is an array of promises - wait for the data to come back
-const pokeParty = [];
+pokemonApp.pokeParty = [];
 // randomPartyArray is the array which will contain the objects for 6 random pokemon
-const randomPartyArray = [];
+pokemonApp.randomPartyArray = [];
 // console.log(pokeParty);
+
+
 for (let i = 1; i <= 150; i++) {
-    pokeParty.push(getPokemon(i)
+    pokemonApp.pokeParty.push(getPokemon(i)
     );
 }
 // generate 6 random numbers from 1-150
 // ERROR HANDLING - THE SAME NUMBER CAN BE GENERATED MORE THAN ONCE
 
 for (let rando = 1; rando <=6; rando++) {
-    const randomParty = Math.floor((Math.random() * pokeParty.length) + 1);
-    randomPartyArray.push(randomParty);
+    const randomParty = Math.floor((Math.random() * pokemonApp.pokeParty.length) + 1);
+    pokemonApp.randomPartyArray.push(randomParty);
 }
 
 
@@ -44,21 +46,21 @@ for (let rando = 1; rando <=6; rando++) {
 
 // array for each of the index specified above
 // ... same as pokeParty[0], pokeParty[1] etc until 6
-$.when(...pokeParty)
+$.when(...pokemonApp.pokeParty)
     // .then((...)) is a parameter that passes a callback function
     .then((...pokeChoices) => {
         // go through pokeChoices and grab the first item[0] of each of the objects
         const arrayOfChoices = pokeChoices.map(pokemon => pokemon[0]);
         let card = 1;
-        for (let n = 0; n <= randomPartyArray.length; n++) {
+        for (let n = 0; n <= pokemonApp.randomPartyArray.length; n++) {
             // console.log(arrayOfChoices[randomPartyArray[n]].name);
             // this yields card-1 to get position of each card bc before, defined let card= a number so ${card} now yields a number
             $(`.card-${card}`).html(`<div>
-            <img src = "${arrayOfChoices[randomPartyArray[n]].sprites.front_default}" alt="Pokemon card." class="filter-on">
-            <p><span class = "correct-answer">${arrayOfChoices[randomPartyArray[n]].name}</span> </p>
+            <img src = "${arrayOfChoices[pokemonApp.randomPartyArray[n]].sprites.front_default}" alt="Pokemon card." class="filter-on">
+            <p><span class = "correct-answer">${arrayOfChoices[pokemonApp.randomPartyArray[n]].name}</span> </p>
             </div>`);
 
-            $(`.card-${card} + form .fieldset`).prepend(`<input type="hidden" value="${arrayOfChoices[randomPartyArray[n]].name}">`);
+            $(`.card-${card} + form .fieldset`).prepend(`<input type="hidden" value="${arrayOfChoices[pokemonApp.randomPartyArray[n]].name}">`);
             // the above prepends input hidden of the value of the generated pokemon name
             card++;
         }
@@ -82,7 +84,7 @@ $(`form`).on(`submit`, function (e) {
         $(this).prepend(`<p class = "answer-statement">Correct!</p>`);
         $(this).parent().find('.raptor').addClass('completed');
         // console.log($(this).parent());
-        score = score + 1;
+        pokemonApp.score = pokemonApp.score + 1;
     } else {     
         $(this).prepend(`<p class='answer-statement'>The correct answer is <span class ="correct-answer">${correctAnswer}</span></p>`);
         // console.log($(this).parent());
@@ -143,45 +145,20 @@ $(`.submit`).on(`click`, function(e){
 
     $(this).parent().parent().find(`img`).removeClass("filter-on");
 
-
-
-
-// gets hidden p to show up
-    // if ($(`.card-1`).val() !== null) {
-    //     console.log("has something");
-    // } else if ($(`.card-1`).val() === "") {
-    //     console.log("has nothing");
-    // }
-    // console.log($(`input[type="text"]`).val());
-
-    // STUFF IM WORKING ON
-    // if ($(`p`).hasClass("completed") == true) {
-    //     // console.log("completed");
-    //     // $(this).parent().parent().find(`p`).css({ "display": "block" });
-    //     $(this).parent().parent().find(`p`).css({ "display": "none" });
-    // } else if ($(`p`).hasClass("completed") == false) {
-    //     $(this).parent().parent().find(`p`).css({ "display": "block" });
-    // }
+    // Printing out the statement with the pokemon name when the user leaves a card blank
     for (let i=1; i < 7; i ++) {
         if (!($(`.card-${i}`).hasClass('completed'))) {
             $(`.card-${i}`).find(`p`).css({ "display": "block" });
         }
         
     }
-    // $(this).parent().parent().find(`p`).css({ "display": "block" });
+
+    // Prints out the final score 
+    $(`.results`).html(`<div><h2>Your final score is ${pokemonApp.score} out of 6!</h2></div>`)
 
 
-    $(`.results`).html(`<div><h2>Your final score is ${score} out of 6!</h2></div>`)
 
 
-
-    // Printing out the statement with the pokemon name when the user leaves a card blank
-    // let correctAnswer = $(this).parent().parent().find('input[type="hidden"]').val();
-    // $(this).parent().parent().find(`form`).prepend(`<p class='answer-statement'>The correct answer was <span class ="correct-answer">${correctAnswer}</span></p>`);
-    
-
-    // $(this).parent().parent().find('input[type="hidden"]').css({"display" : "block"});
-    
 })
 
 
