@@ -206,9 +206,7 @@ p {
   font-size: 1.5rem; }
 
 body {
-  background: -webkit-radial-gradient(red);
-  background: -o-radial-gradient(red);
-  background: radial-gradient(red); }
+  background: red; }
 
 .instructions-content {
   display: -webkit-box;
