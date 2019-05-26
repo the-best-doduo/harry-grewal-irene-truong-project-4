@@ -1,7 +1,6 @@
 // app holds everything
 pokemonApp = {};
-// const globalArray = [];
-// shows array data for 6 random pokemon - needs to be before 
+
 
 // DO NAMESPACING LATER
 // pokemonApp.init = function(){
