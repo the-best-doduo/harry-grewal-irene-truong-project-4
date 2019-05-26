@@ -147,8 +147,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 * {
   padding: 0;
-  margin: 0;
-  border: 1px solid red; }
+  margin: 0; }
 
 .skip-link {
   position: absolute;
@@ -206,7 +205,9 @@ p {
   font-size: 1.5rem; }
 
 body {
-  background: red; }
+  background: -webkit-radial-gradient(rgba(255, 255, 255, 0.3), #dd1a17);
+  background: -o-radial-gradient(rgba(255, 255, 255, 0.3), #dd1a17);
+  background: radial-gradient(rgba(255, 255, 255, 0.3), #dd1a17); }
 
 .instructions-content {
   display: -webkit-box;
@@ -334,8 +335,8 @@ button.pass,
   .reset:hover,
   .reset:focus {
     border: 1px #fdcb04 solid;
-    color: black;
-    background: white;
+    color: #98847f;
+    background: #dadada;
     -webkit-transition: ease 0.2s;
     -o-transition: ease 0.2s;
     transition: ease 0.2s; }
@@ -374,17 +375,18 @@ footer {
   .reset {
     font-size: 2rem; } }
 
-@media (max-width: 750px) {
+@media (max-width: 768px) {
   h1 {
     font-size: 2.6rem; }
   h3 {
     font-size: 1.6rem; }
   p {
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    text-align: center; }
   .card img {
     width: 220px; }
   input[type=text] {
-    width: 80%; }
+    width: 100%; }
   .submit,
   .reset {
     font-size: 1.6rem; } }
@@ -398,16 +400,51 @@ footer {
     font-size: 1.1rem; }
   .card img {
     width: 200px; }
+  input[type=text] {
+    width: 95%; }
   .submit,
   .reset {
     font-size: 1.4rem; } }
 
-@media (max-width: 550px) {
+@media (max-width: 480px) {
   .game-content {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
     .game-content .card {
-      -webkit-box-flex: 0;
-      -ms-flex: 0 0 60%;
-      flex: 0 0 60%; } }
+      margin: 10px 45px; }
+      .game-content .card img {
+        width: 250px; } }
+
+@media (max-width: 320px) {
+  html {
+    font-size: 0.9rem; }
+  .fieldset {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .button-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 95%; }
+  .reset-container {
+    width: 90%; }
+  input[type="submit"],
+  button.pass {
+    margin: 0;
+    margin-top: 5px; }
+  button.pass {
+    margin-bottom: 5px; } }

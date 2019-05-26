@@ -92,8 +92,8 @@ button.pass,
     &:hover,
     &:focus {
         border: 1px $accent solid;
-        color: black;
-        background: white;
+        color: rgb(152,132,127);
+        background: rgb(218,218,218);
         transition: ease 0.2s;
     }
 }

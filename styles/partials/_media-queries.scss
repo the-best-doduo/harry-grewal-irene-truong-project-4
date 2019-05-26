@@ -24,7 +24,7 @@
     }
 }
 
-@media(max-width:750px) {
+@media(max-width:768px) {
     h1 {
         font-size: 2.6rem;
     }
@@ -35,6 +35,7 @@
 
     p {
         font-size: 1.2rem;
+        text-align: center;
     }
 
     .card {
@@ -44,7 +45,7 @@
     }
 
     input[type=text] {
-        width: 80%;
+        width: 100%;
     }
 
     .submit,
@@ -73,6 +74,10 @@
         }
     }
 
+    input[type=text] {
+        width: 95%;
+    }
+
     .submit,
     .reset {
         font-size: 1.4rem;
@@ -80,13 +85,47 @@
 
 }
 
-@media(max-width:550px) {
-
-        .game-content {
-        justify-content: center;
+@media(max-width:480px) {
+    .game-content {
+        flex-direction:column;
         .card {
-            flex: 0 0 60%;
+        margin:10px 45px;
+            img {
+                width: 250px;
+            }
         }
     }
+}
 
+@media(max-width:320px) {
+    html {
+        font-size:0.9rem;
+    }
+
+    .fieldset {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .button-container {
+        display:flex;
+        flex-direction:column;
+        width:95%;
+    }
+
+    .reset-container {
+        width:90%;
+    }
+
+    input[type="submit"],
+    button.pass {
+        
+        margin:0;
+        margin-top: 5px
+
+    }
+    button.pass {
+        margin-bottom:5px;
+    }
 }
