@@ -1,153 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Who's That Pokémon?</title>
-<!-- link to google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Abel|Roboto+Slab:700&display=swap" rel="stylesheet">
-<!-- link to favicon -->
-    <link type="image/png" href="assets/avatar.png" rel="icon">
-<!-- link to CSS -->
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
+    <!-- link to google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Abel|Roboto+Slab:700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- link to favicon -->
+    <link type="image/png" href="assets/avatar.png" rel="icon" />
+    <!-- link to CSS -->
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
 
-<body>
-    <a href='#main' class='skip-link'>Skip to main content.</a>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content.</a>
 
     <header>
-        <h1>Who's That Pokémon?</h1>
+      <h1>Who's That Pokémon?</h1>
     </header>
 
-    <main id = "main">
-        <section class="instructions-area">
-            <div class="instructions-content wrapper">
-                <h2>Instructions</h2>
-                <p>Guess Who's That Pokémon! For each card, type in the field which Pokémon you think it is. Click GET YOUR SCORE! when complete to get your final score, or RESET to start a new game!</p>
-            </div>
-        </section>
-<!-- game-area section starts -->
-        <section class="game-area">
-            <div class="game-content wrapper">
-                <div class="card">
-                    <div class="card-1 raptor">
-<!-- Sprite and name from AJAX call go here -->
-                    </div>
-                    <form action="">
-                        <div role="group" class="fieldset">
-                            <label for="guess-1"></label>
-                            <input id="guess-1" type="text" required="true" placeholder="Your guess" role="status" aria-live="polite">
-                            <div class="button-container">
-                                <input type="submit" value="submit">
-                                <button class="pass" data-cardNum="1">Pass</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="card">
-                    <div class="card-2 raptor">
-<!-- Sprite and name from AJAX call go here -->
-                    </div>
-                    <form action="">
-                        <div role="group" class="fieldset">
-                            <label for="guess-2"></label>
-                            <input id="guess-2" type="text" required="true" placeholder="Your guess" role="status" aria-live="polite">
-                            <div class="button-container">
-                                <input type="submit" value="submit">
-                                <button class="pass" data-cardNum="2">Pass</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="card">
-                    <div class="card-3 raptor">
-<!-- Sprite and name from AJAX call go here -->
-                    </div>
-                    <form action="">
-                        <div role="group" class="fieldset">
-                            <label for="guess-3"></label>
-                            <input id="guess-3" type="text" required="true" placeholder="Your guess" role="status" aria-live="polite">
-                            <div class="button-container">
-                                <input type="submit" value="submit">
-                                <button class="pass" data-cardNum="3">Pass</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="card">
-                    <div class="card-4 raptor">
-<!-- Sprite and name from AJAX call go here -->
-                    </div>
-                    <form action="">
-                        <div role="group" class="fieldset">
-                            <label for="guess-4"></label>
-                            <input id="guess-4" type="text" required="true" placeholder="Your guess" role="status" aria-live="polite">
-                            <div class="button-container">
-                                <input type="submit" value="submit">
-                                <button class="pass" data-cardNum="4">Pass</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="card">
-                    <div class="card-5 raptor">
-<!-- Sprite and name from AJAX call go here -->
-                    </div>
-                    <form action="">
-                        <div role="group" class="fieldset">
-                            <label for="guess-5"></label>
-                            <input id="guess-5" type="text" required="true" placeholder="Your guess" role="status" aria-live="polite">
-                            <div class="button-container">
-                                <input type="submit" value="submit">
-                                <button class="pass" data-cardNum="5">Pass</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="card">
-                    <div class="card-6 raptor">
-<!-- Sprite and name from AJAX call go here -->
-                    </div>
-                    <form action="">
-                        <div role="group" class="fieldset">
-                            <label for="guess-6"></label>
-                            <input id="guess-6" type="text" required="true" placeholder="Your guess" role="status" aria-live="polite">
-                            <div class="button-container">
-                                <input type="submit" value="submit">
-                                <button class="pass" data-cardNum="6">Pass</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="button-container final-submit-container">
-                <button class="submit">Get your score!</button>
-            </div>
-
-        </section>
-<!-- game section ends -->
-
-<!-- results section starts -->
-        <section class="results-area">
-            <div class="wrapper results">
-<!-- DOM Goes Here -->
-            </div>
-        </section>
-<!-- results section ends -->
-        <div class="button-container reset-container">
-            <button type="reset" class="reset">Reset</button>
+    <main id="main">
+      <section class="instructions-area">
+        <div class="instructions-content wrapper">
+          <h2>Instructions</h2>
+          <p>
+            Guess Who's That Pokémon! For each card, type in the field which
+            Pokémon you think it is. Click GET YOUR SCORE! when complete to get
+            your final score, or RESET to start a new game!
+          </p>
         </div>
+      </section>
+      <!-- game-area section starts -->
+      <section class="game-area">
+        <div class="game-content wrapper">
+          <div class="card">
+            <div class="card-1 raptor">
+              <!-- Sprite and name from AJAX call go here -->
+            </div>
+            <form action="">
+              <div role="group" class="fieldset">
+                <label for="guess-1"></label>
+                <input
+                  id="guess-1"
+                  type="text"
+                  required="true"
+                  placeholder="Your guess"
+                  role="status"
+                  aria-live="polite"
+                />
+                <div class="button-container">
+                  <input type="submit" value="submit" />
+                  <button class="pass" data-cardNum="1">Pass</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="card">
+            <div class="card-2 raptor">
+              <!-- Sprite and name from AJAX call go here -->
+            </div>
+            <form action="">
+              <div role="group" class="fieldset">
+                <label for="guess-2"></label>
+                <input
+                  id="guess-2"
+                  type="text"
+                  required="true"
+                  placeholder="Your guess"
+                  role="status"
+                  aria-live="polite"
+                />
+                <div class="button-container">
+                  <input type="submit" value="submit" />
+                  <button class="pass" data-cardNum="2">Pass</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="card">
+            <div class="card-3 raptor">
+              <!-- Sprite and name from AJAX call go here -->
+            </div>
+            <form action="">
+              <div role="group" class="fieldset">
+                <label for="guess-3"></label>
+                <input
+                  id="guess-3"
+                  type="text"
+                  required="true"
+                  placeholder="Your guess"
+                  role="status"
+                  aria-live="polite"
+                />
+                <div class="button-container">
+                  <input type="submit" value="submit" />
+                  <button class="pass" data-cardNum="3">Pass</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="card">
+            <div class="card-4 raptor">
+              <!-- Sprite and name from AJAX call go here -->
+            </div>
+            <form action="">
+              <div role="group" class="fieldset">
+                <label for="guess-4"></label>
+                <input
+                  id="guess-4"
+                  type="text"
+                  required="true"
+                  placeholder="Your guess"
+                  role="status"
+                  aria-live="polite"
+                />
+                <div class="button-container">
+                  <input type="submit" value="submit" />
+                  <button class="pass" data-cardNum="4">Pass</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="card">
+            <div class="card-5 raptor">
+              <!-- Sprite and name from AJAX call go here -->
+            </div>
+            <form action="">
+              <div role="group" class="fieldset">
+                <label for="guess-5"></label>
+                <input
+                  id="guess-5"
+                  type="text"
+                  required="true"
+                  placeholder="Your guess"
+                  role="status"
+                  aria-live="polite"
+                />
+                <div class="button-container">
+                  <input type="submit" value="submit" />
+                  <button class="pass" data-cardNum="5">Pass</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="card">
+            <div class="card-6 raptor">
+              <!-- Sprite and name from AJAX call go here -->
+            </div>
+            <form action="">
+              <div role="group" class="fieldset">
+                <label for="guess-6"></label>
+                <input
+                  id="guess-6"
+                  type="text"
+                  required="true"
+                  placeholder="Your guess"
+                  role="status"
+                  aria-live="polite"
+                />
+                <div class="button-container">
+                  <input type="submit" value="submit" />
+                  <button class="pass" data-cardNum="6">Pass</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="button-container final-submit-container">
+          <button class="submit">Get your score!</button>
+        </div>
+      </section>
+      <!-- game section ends -->
+
+      <!-- results section starts -->
+      <section class="results-area">
+        <div class="wrapper results">
+          <!-- DOM Goes Here -->
+        </div>
+      </section>
+      <!-- results section ends -->
+      <div class="button-container reset-container">
+        <button type="reset" class="reset">Reset</button>
+      </div>
     </main>
 
     <footer>
-        <h3>Favicon and API call from pokeapi.co. Coded By: Harry Grewal & Irene Truong aka "The Best Doduo"</h3>
+      <h3>
+        Favicon and API call from pokeapi.co. Coded By: Harry Grewal & Irene
+        Truong aka "The Best Doduo"
+      </h3>
     </footer>
-    
-<!-- jQuery link -->
-    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
-<!-- link to scripts.js -->
+    <div class="loader" id="loader">
+      <img src="/assets/pokeball-preload.svg" alt="Rotating Pokéball." />
+      <p>Please wait while your party loads.</p>
+    </div>
+    <!-- jQuery link -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- link to scripts.js -->
     <script src="scripts.js"></script>
-</body>
+  </body>
 </html>

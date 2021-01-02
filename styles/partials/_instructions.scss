@@ -1,5 +1,43 @@
 .instructions-content {
-    display:flex;
-    flex-direction: column;
-    padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 200px;
+    height: 200px;
+    animation: rotation 3s infinite ease;
+  }
+  p {
+    color: $accent;
+    font-size: 1.2rem;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(40deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(-40deg);
+  }
 }
